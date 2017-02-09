@@ -19,7 +19,7 @@ mongoose.connect(mongoURI);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(logger('dev'));
+app.use(morgan('dev'));
 
 app.use(session({
   secret: "solange",
