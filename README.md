@@ -26,6 +26,18 @@ As a user I want to:
 - (Reach) Choose how I want to display my top 10
 - (Reach) Generate my own memes
 
+## Wireframes
+### Home Page:
+![Home Page](/public/images/home-page.png)
+### Sign Up:
+![Sign-Up Page](/public/images/sign-up.png)
+### Login:
+![Login Page](/public/images/login.png)
+### User Show:
+![User Show Page](/public/images/user-show.png)
+### Edit:
+![Edit Page](/public/images/edit-page.png)
+
 ## ERD
 ### Entities
 User
