@@ -5,12 +5,13 @@ var session = require('express-session');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 
-// controllers
+// CONTROLLERS
 var memesController = require('./controllers/memes.js');
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 
 var app = express();
+
 // MIDDLEWARE
 app.use(express.static('public'));
 
@@ -31,8 +32,7 @@ app.use('/users', usersController);
 app.use('/users/:id/memes', memesController);
 app.use('/sessions', sessionsController);
 
-
-//LISTENER
+// LISTENERS
 app.listen(3000, function(){
   console.log("Listening to 3000");
 });
