@@ -87,3 +87,31 @@ var exampleUser = {
 };
 
 ## Technical Specs
+controllers
+- users.js
+- memes.js
+db
+- schema.js
+models
+- users.js
+- memes.js
+helpers
+- auth.js
+public
+- css
+ - style.css
+- scripts
+ - app.js
+ - router.js
+- partials
+ - home.html -> display top memes and user memes
+ - user.html -> display user favorite memes and top memes
+ - update-meme.html -> form to update saved memes
+ - login.html -> user login form
+ - signup.html -> user signup form
+ - generator.html -> meme creation form (Reach Goal)
+- index.html -> nav bar and search bar
+Procfile
+package.json
+server.js
+Readme.md
