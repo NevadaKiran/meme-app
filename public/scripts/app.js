@@ -11,11 +11,15 @@ angular.module('memeApp')
 
 
 function HomeController($scope, $http){
-  // var self = this;
-  //
-  // $scope.$on('userLoggedIn', function(event, data) {
-  //   self.currentUser = data;
-  // })
+  var self = this;
+
+  $scope.$on('userLoggedIn', function(event, data) {
+    self.currentUser = data;
+  })
+
+  $scope.$on('userLoggedOut', function(event, data) {
+    self.currentUser = null;
+  })
 }
 
 function AuthController($http, $state, $scope, $rootScope){
@@ -44,12 +48,22 @@ function AuthController($http, $state, $scope, $rootScope){
       .then(function(response) {
         console.log(response);
 
-        // $scope.$emit('userLoggedIn', response.data.data)
-        // $rootScope.$emit('fetchData', response.data.data)
+        $scope.$emit('userLoggedIn', response.data.data);
+        $rootScope.$emit('fetchData', response.data.data);
         $state.go('user');
       });
   }
 
+  function logout() {
+    console.log('Hit Logout Function');
+    $http.delete('/sessions')
+      .then(function(response) {
+        $scope.$emit('userLoggedOut');
+        $state.go('index');
+      });
+  }
+
+  self.logout = logout;
   self.signup = signup;
   self.login = login;
 }
