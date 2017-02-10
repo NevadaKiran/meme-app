@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="memeApp">
   <head>
     <meta charset="utf-8">
     <title>Meme App</title>
@@ -8,15 +8,11 @@
     <script src="/scripts/router.js"></script>
     <script src="/scripts/app.js"></script>
   </head>
-  <body>
-    <!-- All this html wiil need to be beefed up and placed in the correct location. Right now it's for testing purposes. -->
-    <h1>Title</h1>
-    <nav>
-      <ul>
-        <li ui-sref="signup">sign up</li>
-        <li>login</li>
-      </ul>
-    </nav>
+  <body ng-controller="HomeController as home">
+    
+    <ui-view>
+
+    </ui-view>
 
   </body>
 </html>
