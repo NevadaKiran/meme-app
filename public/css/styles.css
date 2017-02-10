@@ -31,3 +31,8 @@ nav div {
 form input {
   width: 300px;
 }
+
+/*Signup Partial*/
+.signUp {
+  text-align: center;
+}
