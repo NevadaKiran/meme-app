@@ -33,7 +33,6 @@ seeder.connect('mongodb://localhost/meme-app', function(){
   seeder.clearModels(['MemeModel'], function(){
     //pupulates data to meme collection
     seeder.populateModels(memeData, function(){
-      //disconnects seeder
       console.log('data seed success');
     });
   });
