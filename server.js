@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var memesController = require('./controllers/memes.js');
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
+var randomMemeController = require('./controllers/randomMemeController.js');
 
 var app = express();
 
@@ -28,8 +29,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use('/memes', randomMemeController);
 app.use('/users', usersController);
-app.use('/users/:id/memes', memesController);
+app.use('/users/:id/meme', memesController);
 app.use('/sessions', sessionsController);
 
 // LISTENERS
