@@ -1,4 +1,4 @@
-angular.module('memeApp', ['ui-router'])
+angular.module('memeApp', ['ui.router'])
 .config(MemeRouter);
 
 function MemeRouter($stateProvider, $urlRouterProvider){
@@ -12,6 +12,7 @@ function MemeRouter($stateProvider, $urlRouterProvider){
   })
   .state('signup', {
     url: '/signup',
-    templateUrl: '/partials/signup.html'
+    templateUrl: '/partials/signup.html',
+    controller: 'AuthController as auth'
   })
 }
