@@ -13,7 +13,7 @@ function HomeController(){
 
 }
 
-function AuthController($http){
+function AuthController($http, $state){
   console.log('Hit AuthController function in app.js');
 
   var self = this;
@@ -27,7 +27,7 @@ function AuthController($http){
     $http.post('/users', newUserInfo)
     .then(function(response){
       console.log(response);
-      // $state.go('login');
+      $state.go('login');
     });
 
   }
