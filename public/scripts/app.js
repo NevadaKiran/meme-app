@@ -36,10 +36,10 @@ function AuthController($http, $state, $scope, $rootScope){
 
   }
 
-  function login(newUserInfo) {
+  function login(userInfo) {
     console.log('Hit Login Function');
-    console.log(newUserInfo);
-    $http.post('/sessions/login', newUserInfo)
+    console.log(userInfo);
+    $http.post('/sessions/login', userInfo)
       .then(function(response) {
         console.log(response);
 
