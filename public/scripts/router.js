@@ -15,4 +15,8 @@ function MemeRouter($stateProvider, $urlRouterProvider){
     templateUrl: '/partials/signup.html',
     controller: 'AuthController as auth'
   })
+  .state('login', {
+    url: '/login',
+    templateUrl: '/partials/login.html'
+  })
 }
