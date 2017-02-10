@@ -1,6 +1,15 @@
+/*General Styling*/
+body {
+  background-color: #FFFEFD;
+  color: #256FE0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
 /*Nav Bar*/
 nav h1 {
   font-size: 2.5em;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 ul {
