@@ -44,3 +44,17 @@ form input {
 .login input {
   width: 200px;
 }
+
+/*.ng-scope{
+  border: 2px solid black;
+}*/
+
+.containerUserPage{
+  display: flex;
+}
+
+.leftUserPage, .rightUserPage, .middleUserPage {
+  border: 2px solid black;
+  padding: 25px;
+  flex-grow: 1;
+}

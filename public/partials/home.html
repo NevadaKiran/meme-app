@@ -1,5 +1,5 @@
 <h1>Home Page</h1>
 
-<div >
-  {{rand.randomMemesData}}
+<div ng-repeat="meme in rand.randomMemesData.data.randomMemes">
+  <img src="{{meme.url}}" alt="">
 </div>
