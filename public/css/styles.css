@@ -31,6 +31,20 @@ nav div {
 form input {
   width: 300px;
 }
+
+/*Signup and Login Partials*/
+.signUp, .login {
+  text-align: center;
+}
+
+.signUp input {
+  width: 200px;
+}
+
+.login input {
+  width: 200px;
+}
+
 /*.ng-scope{
   border: 2px solid black;
 }*/
