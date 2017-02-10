@@ -1,36 +1,18 @@
 //REQUIREMENTS
 var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
+var Meme = require('../models/meme.js');
 
-var Schema = mongoose.Schema;
 
-mongoose.Promise = global.Promise;
+//all credit and documentation to this package can be found at https://github.com/seanemmer/mongoose-seed
 
-var MemeSchema = new Schema({
-  name: String,
-  favorite: {type: Boolean, default: false},
-  category: String,
-  url: String,
-  created_at: Date,
-  updated_at: Date
-});
-
-MemeSchema.pre('save', function(next) {
-  now = new Date();
-  this.updated_at = now;
-
-  if (!this.created_at) { this.created_at = now }
-  next()
-});
-
-var MemeModel = mongoose.model('MemeModel', MemeSchema);
-
+//mongoose-seed boiler plate
 seeder.connect('mongodb://localhost/meme-app', function(){
   //load model
-  seeder.loadModels(['controllers/seeds.js']);
+  seeder.loadModels(['./models/meme.js']);
 
   //clear meme collection
-  seeder.clearModels(['MemeModel'], function(){
+  seeder.clearModels(['Meme'], function(){
     //pupulates data to meme collection
     seeder.populateModels(memeData, function(){
       console.log('data seed success');
@@ -38,8 +20,9 @@ seeder.connect('mongodb://localhost/meme-app', function(){
   });
 });
 
+//data to seed
 var memeData = [
-  { 'model': 'MemeModel',
+  { 'model': 'Meme',
     'documents':[
       {
       name:"pesos",

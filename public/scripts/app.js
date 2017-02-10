@@ -6,7 +6,8 @@ angular.module('memeApp')
 //deals with user
 .controller('AuthController', AuthController)
 //deals with memes
-.controller('MemeController', MemeController);
+.controller('MemeController', MemeController)
+.controller('RandomMemeController', RandomMemeController);
 
 
 function HomeController($scope, $http){
@@ -54,5 +55,26 @@ function AuthController($http, $state, $scope, $rootScope){
 }
 
 function MemeController(){
+
+}
+
+function RandomMemeController($http, $state) {
+  console.log('hit RandomMemeController in app.js');
+
+  var self = this;
+
+  self.randomMemesData = [];
+
+
+  randomMemes();
+
+  function randomMemes (){
+    $http.get('/memes')
+    .then(function(response){
+      console.log(response);
+      self.randomMemesData = response;
+    });
+  }
+  self.randomMemes = randomMemes;
 
 }

@@ -8,7 +8,8 @@ function MemeRouter($stateProvider, $urlRouterProvider){
   $stateProvider
   .state('index', {
     url: '/',
-    templateUrl: '/partials/home.html'
+    templateUrl: '/partials/home.html',
+    controller: 'RandomMemeController as rand'
   })
   .state('signup', {
     url: '/signup',
