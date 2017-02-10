@@ -7,24 +7,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="/scripts/router.js"></script>
     <script src="/scripts/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body ng-controller="HomeController as home">
     <nav>
-      <div>
-        <h1 ui-sref="index">Meme App</h1>
-      </div>
+      <ul>
+        <li ui-sref="signup">Sign Up!</li>
+        <li ui-sref="login">Login</li>
+        <li>Logout</li>
+      </ul>
+      <h1 ui-sref="index">Meme App</h1>
       <div>
         <form>
           <input type="text" name="" value="Search">
           <button>Search</button>
         </form>
-      </div>
-      <div>
-        <ul>
-          <li ui-sref="signup">Sign Up!</li>
-          <li ui-sref="login">Login</li>
-        </ul>
       </div>
     </nav>
 
