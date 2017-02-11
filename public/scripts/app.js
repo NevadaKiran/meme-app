@@ -69,7 +69,13 @@ function AuthController($http, $state, $scope, $rootScope){
 }
 
 function MemeController(){
+  var self = this;
 
+ function showCreate(){
+   console.log('hit showCreate method in MemeController');
+ }
+
+ self.showCreate = showCreate;
 }
 
 function RandomMemeController($http, $state) {
