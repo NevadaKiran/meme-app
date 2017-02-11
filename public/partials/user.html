@@ -1,1 +1,26 @@
 <h1>User Show Page</h1>
+
+<section class="containerUserPage">
+  <section class="leftUserPage">
+    <div class="favoriteMemes">
+      <h3>Favorites</h3>
+
+    </div>
+
+    <div class="savedMemes">
+      <h3>Saved Memes</h3>
+    </div>
+  </section>
+
+  <section class="middleUserPage">
+    <h3>Middle Section Stuff here</h3>
+
+  </section>
+
+  <section class="rightUserPage" ng-controller="RandomMemeController as rand">
+    <h3>Meme Feed</h3>
+    <div class="userMemeFeed" ng-repeat="meme in rand.randomMemesData.data.randomMemes">
+      <img class="feedMeme" src="{{meme.url}}" alt="{{meme.name}}">
+    </div>
+  </section>
+</section>
