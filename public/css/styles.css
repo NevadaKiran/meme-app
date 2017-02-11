@@ -34,6 +34,10 @@ nav div {
   text-align: center;
 }
 
+#mainSearch input, label {
+  display: block;
+}
+
 /*Home Partial*/
 .homeMemes {
   display: flex;
