@@ -66,6 +66,16 @@ div img {
 
 .leftUserPage, .rightUserPage, .middleUserPage {
   border: 2px solid black;
-  padding: 25px;
+  /*padding: 25px;*/
   flex-grow: 1;
+}
+
+.userMemeFeed {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.feedMeme {
+  width: 30%;
 }
