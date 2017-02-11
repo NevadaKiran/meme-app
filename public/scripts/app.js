@@ -86,7 +86,7 @@ function RandomMemeController($http, $state) {
     $http.get('/memes')
     .then(function(response){
       console.log(response);
-      self.randomMemesData = response;
+      self.randomMemesData = response.data.randomMemes;
     });
   }
   // var getRandomMeme = function(randomMemesData.data.randomMemes._id){
@@ -97,24 +97,24 @@ function RandomMemeController($http, $state) {
   // }
 
   // this object will contain all of your properties and methods/functions
-  // var game = {
-
-    // an array of ten tiles
-    memeData: ['randomMemesData'],
 
     // USE THIS TO SHUFFLE YOUR ARRAYS
     //a = array
-    shuffle: function(a) {
-      for(var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x);
-        return a;
-    },
+     function shuffle() {
+       $http.get('/memes')
+       .then(function(response){
+         console.log(response);
+        //  self.randomMemesData = response.data.randomMemes;
+        for(var j, x, i = response.data.randomMemes.length; i; j = Math.floor(Math.random() * i),
+        x = response.data.randomMemes[--i], response.data.randomMemes[i] = response.data.randomMemes[j], response.data.randomMemes[j] = x);
+        console.log(response.data.randomMemes);
+          // return memesArray;
+       })
 
-    start: function(){
-      console.log("EVERY DAY I'M SHUFFELING");
-      // shuffle the tiles array
-      meme.shuffle(meme.randomMemesData);
+    }
+    shuffle();
 
 
   self.randomMemes = randomMemes;
-
+  self.shuffle = shuffle;
 }
