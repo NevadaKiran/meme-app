@@ -86,7 +86,7 @@ function RandomMemeController($http, $state) {
     $http.get('/memes')
     .then(function(response){
       console.log(response);
-      self.randomMemesData = response;
+      self.randomMemesData = response.data.randomMemes;
     });
   }
   self.randomMemes = randomMemes;
