@@ -56,9 +56,10 @@ div img {
   width: 200px;
 }
 
-/*.ng-scope{
-  border: 2px solid black;
-}*/
+/*User Partial*/
+h3 {
+  text-align: center;
+}
 
 .containerUserPage{
   display: flex;
@@ -66,16 +67,15 @@ div img {
 
 .leftUserPage, .rightUserPage, .middleUserPage {
   border: 2px solid black;
-  /*padding: 25px;*/
   flex-grow: 1;
 }
 
 .userMemeFeed {
   display: flex;
   flex-direction: column;
-  padding: 0px;
 }
 
 .feedMeme {
-  width: 30%;
+  align-self: center;
+  padding-bottom: 10px;
 }
