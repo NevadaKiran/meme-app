@@ -27,8 +27,15 @@ nav div {
   text-align: center;
 }
 
-form input {
+#mainSearch {
   width: 300px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+}
+
+#mainSearch input, label {
+  display: block;
 }
 
 /*Home Partial*/
