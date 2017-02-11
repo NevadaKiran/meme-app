@@ -83,18 +83,22 @@ function RandomMemeController($http, $state) {
 
   var self = this;
 
-  self.randomMemesData = [];
+  self.shuffledMemesData =[];
 
+    // USE THIS TO SHUFFLE YOUR ARRAYS
+  
+     function shuffle() {
+       $http.get('/memes')
+       .then(function(response){
+        for(var j, x, i = response.data.randomMemes.length;
+          i; j = Math.floor(Math.random() * i),
+        x = response.data.randomMemes[--i],
+        response.data.randomMemes[i] = response.data.randomMemes[j],
+        response.data.randomMemes[j] = x);
+        self.shuffledMemesData = response.data.randomMemes;
+       })
+    }
+    shuffle();
 
-  randomMemes();
-
-  function randomMemes (){
-    $http.get('/memes')
-    .then(function(response){
-      console.log(response);
-      self.randomMemesData = response.data.randomMemes;
-    });
-  }
-  self.randomMemes = randomMemes;
-
+  self.shuffle = shuffle;
 }
