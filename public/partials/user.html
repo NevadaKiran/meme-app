@@ -19,7 +19,7 @@
 
   <section class="rightUserPage" ng-controller="RandomMemeController as rand">
     <h3>Meme Feed</h3>
-    <div class="userMemeFeed" ng-repeat="meme in rand.randomMemesData">
+    <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData">
       <img class="feedMeme" src="{{meme.url}}" alt="{{meme.name}}">
     </div>
   </section>
