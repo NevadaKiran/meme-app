@@ -89,6 +89,32 @@ function RandomMemeController($http, $state) {
       self.randomMemesData = response;
     });
   }
+  // var getRandomMeme = function(randomMemesData.data.randomMemes._id){
+  //   console.log(randomMemesData.data.randomMemes._id);
+  //   var randomMemes = Math.floor((Math.random() * 73) + 1);
+  //   document.getElementById(meme_id)
+  //   .setAttribute("src", memeData[randomMemes].randomMemes)
+  // }
+
+  // this object will contain all of your properties and methods/functions
+  // var game = {
+
+    // an array of ten tiles
+    memeData: ['randomMemesData'],
+
+    // USE THIS TO SHUFFLE YOUR ARRAYS
+    //a = array
+    shuffle: function(a) {
+      for(var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x);
+        return a;
+    },
+
+    start: function(){
+      console.log("EVERY DAY I'M SHUFFELING");
+      // shuffle the tiles array
+      meme.shuffle(meme.randomMemesData);
+
+
   self.randomMemes = randomMemes;
 
 }
