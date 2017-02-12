@@ -79,3 +79,119 @@ h3 {
   align-self: center;
   padding-bottom: 10px;
 }
+
+/*createMeme partial*/
+.blankMemeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.searchBarCreateMeme {
+  margin: 2em  auto;
+}
+.searchBarCreateMeme > form {
+  margin: auto;
+  text-align: center;
+}
+.createMemeContainer > h2 {
+  text-align: left;
+}
+.searchBarCreateMeme > form  input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.blankMemes {
+  padding: 1em;
+}
+.blankMemes:hover {
+  background-color: #39CCCC;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 3em;
+}
+
+.modal-body img {
+  margin: 1em auto;
+}
+
+.modal-body  form {
+  width: 299px;
+  display: block;
+  margin:  auto;
+}
+
+.modal-body  form button {
+  width: 308px;
+  background-color: #DDDDDD;
+}
+/***************  modal *********************/
+/*credit: code by ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp*/
+.createMemeModal {
+  display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalContent {
+  position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #39CCCC;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+/********************************************/
