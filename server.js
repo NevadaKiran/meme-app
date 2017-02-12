@@ -31,7 +31,7 @@ app.use(session({
 
 app.use('/memes', randomMemeController);
 app.use('/users', usersController);
-app.use('/users/:id/meme', memesController);
+app.use('/user/:id/meme', memesController);
 app.use('/sessions', sessionsController);
 
 // LISTENERS

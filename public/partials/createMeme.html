@@ -1,0 +1,45 @@
+<section class="createMemeContainer">
+  <h2>Select a meme background</h3>
+
+  <div class="searchBarCreateMeme">
+    <form >
+      <input type="text" ng-model="searchValue" placeholder="Search for meme">
+    </form>
+  </div>
+
+  <!-- ********create meme modal window ************* -->
+  <!-- setup credit to ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp -->
+  <div id="modal" class="createMemeModal">
+    <div class="modalContent">
+      <div class="modal-header">
+        <span ng-click="meme.closeCreateMemeModal()" id="close" class="close">&times;</span>
+        <h2>Create a meme</h2>
+      </div>
+      <div class="modal-body">
+        <p>{{meme.memeName}}</p>
+        <img src="{{meme.memeUrl}}" alt="{{meme.memeName}}">
+        <form ng-submit="meme.createMeme(newMeme, meme.memeId)">
+          <!-- <label for="">Edit meme</label> -->
+          <input type="text" ng-model="newMeme.name" placeholder="name">
+          <input type="text" ng-model="newMeme.topText" placeholder="top text">
+          <input type="text" ng-model="newMeme.bottomText" placeholder="Bottom text">
+          <input type="text" ng-model="newMeme.category" placeholder="category">
+          <button type="submit">Edit</button>
+        </form>
+      </div>
+      <div class="modal-showNewMeme">
+        <h2>{{meme.newMeme.name}}</h2>
+        <img src="{{meme.newMeme.url}}" alt=""><br>
+        <span>Edit | Keep</span>
+      </div>
+    </div>
+  </div>
+<!-- *********************************************** -->
+  <section class="blankMemeContainer" >
+
+    <div  ng-click="meme.showCreateMemeModal(blank)" class="blankMemes" ng-repeat="blank in meme.blankMemes | filter: searchValue">
+      <img src="{{blank.url}}" alt="{{blank.name}}">
+    </div>
+
+  </section>
+</section>
