@@ -1,7 +1,5 @@
-<br>
-<br>
 <div class="homeMemes">
-  <div ng-repeat="meme in rand.shuffledMemesData">
+  <div ng-repeat="meme in rand.shuffledMemesData | filter: searchBar">
     <img src="{{meme.url}}" alt="">
   </div>
 </div>
