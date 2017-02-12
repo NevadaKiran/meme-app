@@ -133,12 +133,19 @@ h3 {
 .modal-body  form {
   width: 299px;
   display: block;
-  margin:  auto;
+  margin: auto;
 }
 
-.modal-body  form button {
+.modal-body  form input{
+  width: 299px;
+  display: block;
+  margin: auto;
+}
+
+.modal-body  form  button {
   width: 308px;
   background-color: #DDDDDD;
+  margin: auto;
 }
 /***************  modal *********************/
 /*credit: code by ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp*/
