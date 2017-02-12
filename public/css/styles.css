@@ -147,6 +147,20 @@ h3 {
   background-color: #DDDDDD;
   margin: auto;
 }
+.modal-showNewMeme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.modal-showNewMeme > img, span{
+  margin: auto;
+}
+
+.modal-showNewMeme > h2{
+  margin: 2em auto;
+}
 /***************  modal *********************/
 /*credit: code by ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp*/
 .createMemeModal {
