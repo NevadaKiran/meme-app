@@ -27,7 +27,7 @@ ul li {
   padding: 0 5px;
 }
 
-nav div {
+.homeSearch {
   display: block;
   text-align: center;
 }
