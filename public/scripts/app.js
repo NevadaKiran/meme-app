@@ -75,6 +75,7 @@ function MemeController($http, $state, $scope){
   self.memeUrl = '';
   self.memeId = '';
   self.memeName = '';
+  self.newMeme = {};
   getBlankMemes();
 
 
@@ -93,15 +94,19 @@ function MemeController($http, $state, $scope){
  }
 
   function createMeme(newMeme, id) {
-     $http.post(`https://api.imgflip.com/caption_image?template_id=${id}&username=acpbm&password=305238T7K*uI&text0=${newMeme.topText}&text1=${newMeme.bottomMeme}`)
+     $http.post(`https://api.imgflip.com/caption_image?template_id=${id}&username=acpbm&password=305238T7K*uI&text0=${newMeme.topText}&text1=${newMeme.bottomText}`)
      .then(function(response) {
        console.log(response);
        self.newMeme = {
          name: newMeme.name,
          category: newMeme.category,
-         url: response.data.url
+         url: response.data.data.url
         }
-       self.memeUrl = response.data.url;
+        console.log(self.newMeme);
+       self.memeUrl = response.data.data.url;
+       $(".modal-body").css("display", "none");
+       $(".modal-body").children().css("display", "none");
+        $(".modal-body").css("display", "block");
      });
   }
 
@@ -119,6 +124,8 @@ function MemeController($http, $state, $scope){
    console.log('hit close modal');
    $("#modal").css("display", "none");
  }
+
+ self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
  self.showCreateMemeModal = showCreateMemeModal;
  self.showCreate = showCreate;
