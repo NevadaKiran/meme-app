@@ -82,7 +82,7 @@ button {
   padding: 5px;
 }
 
-.signUpMemes {
+.signUpMemes, .loginMemes {
   display: inline-flex;
 }
 
