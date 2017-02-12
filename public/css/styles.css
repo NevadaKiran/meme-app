@@ -83,8 +83,13 @@ button {
 }
 
 /*User Partial*/
-h3 {
+header {
   text-align: center;
+}
+
+.userTitles {
+  text-align: center;
+  text-decoration: underline;
 }
 
 .containerUserPage{
