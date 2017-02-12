@@ -125,6 +125,8 @@ function MemeController($http, $state, $scope){
    $("#modal").css("display", "none");
  }
 
+ 
+
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
  self.showCreateMemeModal = showCreateMemeModal;
