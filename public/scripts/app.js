@@ -117,7 +117,7 @@ function getSavedMemes(currentUser){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
       console.log(response);
-      self.savedMemes = response;
+      self.savedMemes = response.data.currentUser.memeList;
 
     })
 }
