@@ -109,9 +109,17 @@ function MemeController($http, $state, $scope){
      self.password = response.data.response[0].password;
      self.username = response.data.response[0].username;
 
-    
+
    });
  }
+function getSavedMemes(currentUser){
+  $http.get(`/user/${currentUser}/meme`)
+    .then(function(response){
+      console.log(response);
+      self.savedMemes = response;
+
+    })
+}
 
  function saveMeme(newMeme, currentUser){
    console.log(currentUser);
@@ -192,6 +200,7 @@ function MemeController($http, $state, $scope){
  self.setConfig = setConfig;
  self.getConfig = getConfig;
  self.saveMeme = saveMeme;
+ self.getSavedMemes = getSavedMemes;
 }
 
 function RandomMemeController($http, $state) {
