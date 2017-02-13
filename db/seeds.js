@@ -25,18 +25,6 @@ var memeData = [
   { 'model': 'Meme',
     'documents':[
       {
-      name:"pesos",
-      category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/Memes-en-espa%C3%B1ol.jpg"
-      },
-
-      {
-      name:"chistoso",
-      category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/wg0qe0.jpg"
-      },
-
-      {
       name:"bieber",
       category:"Spanish",
       url:"https://www.memesitos.com/wp-content/uploads/2015/11/5295.jpg"
@@ -118,12 +106,6 @@ var memeData = [
       name:"not skeptical",
       category:"skeptical-hippo",
       url:"http://manlycurls.com/blog_new/wp-content/uploads/2011/10/skeptical.hippo_-550x396.jpg"
-      },
-
-      {
-      name:"incontrovertible lion",
-      category:"skeptical-hippo",
-      url:"http://www.pwnfitness.com/wp-content/uploads/2013/06/take-that-skeptical-hippo.jpg"
       },
 
       {
@@ -436,24 +418,6 @@ var memeData = [
         name:"jealous-dog",
         category:"animals",
         url:"https://moshiqa.files.wordpress.com/2016/01/silly-animal-memes-17.jpg"
-      },
-
-      {
-        name:"capable-bear",
-        category:"animals",
-        url:"https://amazinganimalphotos.com/wp-content/uploads/2014/11/chill-out-i-got-this-funny-animal-memes.jpg"
-      },
-
-      {
-        name:"get-in",
-        category:"creepy-sloth",
-        url:"http://s2.quickmeme.com/img/a7/a7ffbe4f3f0b8454ced1bd2faccbd4540a4cab8f67c3f8a0d363744bd458895e.jpg"
-      },
-
-      {
-        name:"challenges",
-        category:"creepy-sloth",
-        url:"https://s-media-cache-ak0.pinimg.com/236x/5f/40/8f/5f408f11d5d3d943e3f2ebde9d3b2b35.jpg"
       },
 
       {

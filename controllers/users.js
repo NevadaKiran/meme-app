@@ -6,8 +6,6 @@ var authHelpers = require('../helpers/auth.js');
 
 router.post('/', authHelpers.createSecure, function(req, res){
 
-  console.log("backend post route");
-
   var user = new User({
     name: req.body.name,
     email: req.body.email,
@@ -17,7 +15,6 @@ router.post('/', authHelpers.createSecure, function(req, res){
 
   user.save(function(err, user){
     if(err){ console.log(err); }
-    console.log(user);
     res.json({status: 201, message: 'user created'});
   });
 
