@@ -50,10 +50,18 @@ ul li {
   flex-wrap: wrap;
 }
 
+.eachMeme {
+  border: 1px solid black;
+}
+
 div img {
   height: 300px;
   width: 300px;
-  padding: 0 6px;
+  padding: 0 5px;
+}
+
+.fa {
+  padding-left: 50px;
 }
 
 /*Signup and Login Partials*/
@@ -105,12 +113,12 @@ header {
   flex-grow: 1;
 }
 
-.userMemeFeed {
+.userMemeFeed, .savedMemes {
   display: flex;
   flex-direction: column;
 }
 
-.feedMeme {
+.userMemeLists {
   align-self: center;
   padding-bottom: 10px;
 }
