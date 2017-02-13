@@ -113,12 +113,12 @@ header {
   flex-grow: 1;
 }
 
-.userMemeFeed {
+.userMemeFeed, .savedMemes {
   display: flex;
   flex-direction: column;
 }
 
-.feedMeme {
+.userMemeLists {
   align-self: center;
   padding-bottom: 10px;
 }

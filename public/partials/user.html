@@ -13,14 +13,15 @@
   <section class="middleUserPage" ng-init="meme.getSavedMemes(home.currentUser_id)">
     <h2 class="userTitles">Saved Memes</h2>
     <div  class="savedMemes" ng-repeat="memes in meme.savedMemes">
-      <img src="{{memes.url}}" alt="{{memes.name}}">
+      <img class="userMemeLists" src="{{memes.url}}" alt="{{memes.name}}"><br>
+      <!-- <i class="fa fa-heart"><i class="fa fa-star"><i class="fa fa-edit"><i class="fa fa-remove"> -->
     </div>
   </section>
 
   <section class="rightUserPage" ng-controller="RandomMemeController as rand">
     <h2 class="userTitles">Meme Feed</h2>
     <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10">
-      <img class="feedMeme" src="{{meme.url}}" alt="{{meme.name}}">
+      <img class="userMemeLists" src="{{meme.url}}" alt="{{meme.name}}">
     </div>
   </section>
 </section>
