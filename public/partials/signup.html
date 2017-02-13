@@ -1,4 +1,4 @@
-<div class="signUp">
+<div class="signUp" ng-controller="RandomMemeController as rand">
   <h1>Sign-Up!</h1>
   <form ng-submit="auth.signup(newUserInfo)">
    <input type="text" ng-model="newUserInfo.name" placeholder="name"><br>
@@ -7,4 +7,8 @@
    <input type="password" ng-model="newUserInfo.password"  placeholder="password"><br>
   <button type="submit" name="signup">Sign-Up</button>
   </form>
+  <br>
+  <div class="signUpMemes" ng-repeat="meme in rand.shuffledMemesData | limitTo: 2">
+    <img src="{{meme.url}}" alt="{{meme.name}}">
+  </div>
 </div>
