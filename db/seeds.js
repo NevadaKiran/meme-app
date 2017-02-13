@@ -27,445 +27,373 @@ var memeData = [
       {
       name:"pesos",
       category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/Memes-en-espa%C3%B1ol.jpg"
+      url:"http://bit.ly/2lHg4Ge"
       },
-
       {
       name:"chistoso",
       category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/wg0qe0.jpg"
+      url:"http://bit.ly/2lcgGqb"
       },
-
       {
       name:"bieber",
       category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/5295.jpg"
+      url:"http://bit.ly/2lc8JS2"
       },
-
       {
       name:"juicio",
       category:"Spanish",
-      url:"https://www.memesitos.com/wp-content/uploads/2015/11/hqdefault-15.jpg"
+      url:"http://bit.ly/2lHaUdg"
       },
-
       {
       name:"Eyebrows",
       category:"none-of-my-business-meme",
-      url:"http://www.dumpaday.com/wp-content/uploads/2015/08/none-of-my-business-meme.jpg"
+      url:"http://bit.ly/2lBSTkr"
       },
-
       {
         name:"gym",
         category:"none-of-my-business-meme",
-        url:"https://s-media-cache-ak0.pinimg.com/564x/ba/a9/6b/baa96b70d2a27db87066fa2587f02bdd.jpg"
+        url:"http://bit.ly/2kLeoxK"
       },
-
       {
       name:"drama",
       category:"none-of-my-business-meme",
       url:"https://i.imgflip.com/gxx8r.jpg"
       },
-
       {
       name:"sign",
       category:"none-of-my-business-meme",
       url:"https://i.imgflip.com/ackdo.jpg"
       },
-
       {
       name:"like a boss",
       category:"none-of-my-business-meme",
       url:"https://i.imgflip.com/aqq52.jpg"
       },
-
       {
       name:"we did",
       category:"walk-into-mordor",
-      url:"http://cdn.smosh.com/sites/default/files/bloguploads/meme-simply-4.jpg"
+      url:"http://smo.sh/2kLeBRK"
       },
-
       {
       name:"argue with a woman",
       category:"walk-into-mordor",
-      url:"http://cdn.smosh.com/sites/default/files/bloguploads/meme-simply-2.jpg"
+      url:"http://smo.sh/2kCPvSn"
       },
-
       {
       name:"build an army",
       category:"walk-into-mordor",
-      url:"http://s2.quickmeme.com/img/39/399aabaa6b7cb2eddb4dc216dc3c7dc33ed35252484eb4f2d183e59aad0b1f44.jpg"
+      url:"http://bit.ly/2lBWv64"
       },
-
       {
       name:"fabulous",
       category:"walk-into-mordor",
-      url:"http://www.vitamin-ha.com/wp-content/uploads/2012/03/one-does-not-simply-walk-into-mordor.jpg"
+      url:"http://bit.ly/2lHvomk"
       },
-
       {
       name:"warp",
       category:"walk-into-mordor",
-      url:"http://www.vitamin-ha.com/wp-content/uploads/2012/03/funny-captions-star-trek-one-does-not-simply-warp-into-mordor.jpg"
+      url:"http://bit.ly/2kLli63"
       },
-
       {
       name:"is skeptical",
       category:"skeptical-hippo",
-      url:"http://img.memecdn.com/skeptical-hippo_o_575409.jpg"
+      url:"http://bit.ly/2l7N1yQ"
       },
-
       {
       name:"not skeptical",
       category:"skeptical-hippo",
-      url:"http://manlycurls.com/blog_new/wp-content/uploads/2011/10/skeptical.hippo_-550x396.jpg"
+      url:"http://bit.ly/2lbWi8H"
       },
-
       {
       name:"incontrovertible lion",
       category:"skeptical-hippo",
-      url:"http://www.pwnfitness.com/wp-content/uploads/2013/06/take-that-skeptical-hippo.jpg"
+      url:"http://bit.ly/2koWSvG"
       },
-
       {
         name:"easy",
         category:"skeptical-hippo",
-        url:"https://cdn.meme.am/cache/instances/folder996/250x250/27344996.jpg"
+        url:"http://bit.ly/2l81db1"
       },
-
       {
         name:"check source",
         category:"skeptical-hippo",
-        url:"https://image.slidesharecdn.com/spiritanimalsofageneration-130904215754-/95/spirit-animals-of-a-generation-why-millennials-need-memes-25-638.jpg?cb=1378937586"
+        url:"http://bit.ly/2l0wbPV"
       },
-
       {
         name:"midget",
         category:"skeptical-hippo",
-        url:"http://www.relatably.com/m/img/tiny-hippo-memes/every-little-hippo-amp-039-s-dream_o_1704361.jpg"
+        url:"http://bit.ly/2kD02gk"
       },
-
       {
         name:"harley",
         category:"batman",
-        url:"http://weknowmemes.com/wp-content/uploads/2015/05/batman-harley-meme.jpeg"
+        url:"http://bit.ly/2l7KC7o"
       },
-
       {
         name:"illegal-alien",
         category:"batman",
-        url:"https://s-media-cache-ak0.pinimg.com/originals/2a/73/71/2a737117de6721799328e4a8917c4d3d.jpg"
+        url:"http://bit.ly/2l0bO5r"
       },
-
       {
         name:"jobs",
         category:"batman",
-        url:"https://s-media-cache-ak0.pinimg.com/736x/00/2c/2e/002c2ecb11d0362a3bce8b1e4f14a01d.jpg"
+        url:"http://bit.ly/2l81PNR"
       },
-
       {
         name:"sad-batman",
         category:"batman",
-        url:"http://picsmine.com/wp-content/uploads/2017/01/Your-Comment-Made-Batman-Sad-Batman-Memes.jpg"
+        url:"http://bit.ly/2l7Lxoh"
       },
-
       {
         name:"the-club",
         category:"batman",
-        url:"https://images.moviepilot.com/images/c_limit,q_auto,w_710/auy3bgxcxkn21afb7d4j/the-20-funniest-batman-memes-on-the-internet-that-show-off-the-dark-knights-light-side.jpg"
+        url:"http://bit.ly/2lC3iNd"
       },
-
       {
         name:"heroes",
         category:"harambe",
         url:"http://i.imgur.com/Jod1Yvjl.jpg"
       },
-
       {
         name:"cesar-revenge",
         category:"harambe",
         url:"https://i.ytimg.com/vi/RomBIQnj0Wc/0.jpg"
       },
-
       {
         name:"plenty-kids",
         category:"harambe",
-        url:"http://www.funniestmemes.com/wp-content/uploads/2016/06/Funniest_Memes_karl-pilkington-on-gorilla-shooting_6352.jpeg"
+        url:"http://bit.ly/2l0dTyw"
       },
-
       {
         name:"granpa",
         category:"harambe",
-        url:"http://i0.kym-cdn.com/photos/images/original/001/162/680/0d2.jpg"
+        url:"http://bit.ly/2lC6ZCJ"
       },
-
       {
         name:"cool-vader",
         category:"star-wars",
-        url:"https://s-media-cache-ak0.pinimg.com/736x/d1/02/ce/d102ce58cc118e7e0115ff8b5fe1db7c.jpg"
+        url:"http://bit.ly/2kCVLcV"
       },
-
       {
         name:"workaholic",
         category:"star-wars",
-        url:"https://s-media-cache-ak0.pinimg.com/736x/39/37/4f/39374f12f15460818026667b6658b2e0.jpg"
+        url:"http://bit.ly/2lbYxJd"
       },
-
       {
         name:"coffee-fail",
-        category:"star-wars",
-        url:"https://s-media-cache-ak0.pinimg.com/originals/eb/ef/ac/ebefacae6374dfbbb17bbc3ed0b03465.jpg"
+        category:"star-wars, mongo",
+        url:"http://bit.ly/2lItK4I"
       },
-
       {
         name:"skepticism",
         category:"star-wars",
-        url:"https://pbs.twimg.com/media/CE9D64AWEAAPXKd.jpg"
+        url:"http://bit.ly/2lBWore"
       },
-
       {
         name:"philosophy",
         category:"star-wars",
-        url:"http://cdn.smosh.com/sites/default/files/bloguploads/star-wars-meme-raptor.jpg"
+        url:"http://smo.sh/2kLhiCC"
       },
-
       {
         name:"missing-dad",
         category:"star-wars",
-        url:"http://68.media.tumblr.com/d26e530ec208148517052e409b6cf69b/tumblr_o9frcc5sKF1un8pvuo1_500.jpg"
+        url:"http://bit.ly/2kjMt9L"
       },
-
       {
         name:"missing-you",
         category:"star-wars",
-        url:"https://s-media-cache-ak0.pinimg.com/564x/f3/11/2d/f3112dbed2fd3e5305675a3787cd9d73.jpg"
+        url:"http://bit.ly/2lHwPRo"
       },
-
       {
         name:"avp",
         category:"philosoraptor",
-        url:"http://i0.kym-cdn.com/photos/images/facebook/000/591/959/bf6.jpg"
+        url:"http://bit.ly/2l0rkyl"
       },
-
       {
         name:"hipsters",
         category:"philosoraptor",
-        url:"https://sites.google.com/a/umich.edu/the-rhetoric-of-memes/_/rsrc/1386350972056/home/philosoraptor/dino3.png"
+        url:"http://bit.ly/2kCMT78"
       },
-
       {
         name:"pondering",
         category:"philosoraptor",
-        url:"http://blog.memes.com/wp-content/uploads/2016/04/Philosoraptor-meme-7.jpg"
+        url:"http://bit.ly/2kjZYWX"
       },
-
       {
         name:"short-arms",
         category:"philosoraptor",
-        url:"http://hotphotosfree.com/sites/default/files/styles/medium/public/field/image/beb180e31157af6f76b1d1634517f6d4.jpg?itok=WIQ2Hfny"
+        url:"http://bit.ly/2lBGE7I"
       },
-
       {
         name:"sex-yes?",
         category:"philosoraptor",
-        url:"http://img.memecdn.com/if-i-asked-you_o_378669.jpg"
+        url:"http://bit.ly/2lBT7Ip"
       },
-
       {
         name:"shut-up",
         category:"grumpy-cat",
-        url:"http://i0.kym-cdn.com/photos/images/facebook/000/919/578/c2f.jpg"
+        url:"http://bit.ly/2kjXKXl"
       },
-
       {
         name:"ray",
         category:"grumpy-cat",
-        url:"https://s-media-cache-ak0.pinimg.com/236x/2f/59/f0/2f59f03c1191249a7503aababa36f668.jpg"
+        url:"http://bit.ly/2l7C5l2"
       },
 
       {
         name:"zoo",
         category:"grumpy-cat",
-        url:"http://images1.tickld.com/live/411479.jpg"
+        url:"http://bit.ly/2lBT9jB"
       },
-
       {
         name:"dreams",
         category:"grumpy-cat",
-        url:"https://s-media-cache-ak0.pinimg.com/736x/f1/a3/ba/f1a3ba5063af52ebf2d6792bbbce8f0b.jpg"
+        url:"http://bit.ly/2lInF8b"
       },
-
       {
         name:"try-again",
         category:"grumpy-cat",
-        url:"http://cdn.skinnyms.com/wp-content/uploads/2015/03/9-Best-Grumpy-Cat-Memes-2.jpg"
+        url:"http://bit.ly/2l0jzIJ"
       },
-
       {
         name:"love",
         category:"grumpy-cat",
-        url:"https://s-media-cache-ak0.pinimg.com/originals/55/6f/e2/556fe2a9bf387905dbc4d3b189ea953a.png"
+        url:"http://bit.ly/2kCLFbV"
       },
-
       {
         name:"coffee-monkey",
         category:"coffee",
-        url:"http://68.media.tumblr.com/0a4f1b36e8b7c75bdbbf7ff40646e4d2/tumblr_o38da0cHxL1v9vblso1_500.png"
+        url:"http://bit.ly/2kLglKv"
       },
-
       {
         name:"psycho",
         category:"coffee",
-        url:"https://s-media-cache-ak0.pinimg.com/564x/6f/d5/1f/6fd51fd5346daaff43221b4c5c84a0f5.jpg"
+        url:"http://bit.ly/2l7MH34"
       },
-
       {
         name:"ride-or-die",
         category:"questions",
-        url:"https://s-media-cache-ak0.pinimg.com/236x/aa/47/e8/aa47e86d11197098751502ba21dde9e5.jpg"
+        url:"http://bit.ly/2l0r4iH"
       },
-
       {
         name:"stupid-question",
         category:"questions",
-        url:"http://img.memecdn.com/There-are-no-stupid-questions_o_140476.jpg"
+        url:"http://bit.ly/2lc04ie"
       },
-
       {
         name:"g-o-t-questions",
         category:"questions",
-        url:"https://mandmhorsemanship.files.wordpress.com/2015/09/brace-yourselves-for-a-few-questions-meme-7859.jpg"
+        url:"http://bit.ly/2lbXNUv"
       },
-
       {
         name:"axe",
         category:"questions",
-        url:"http://s2.quickmeme.com/img/42/4262c9cc7ee6ba55ace5ff403f2fbee6e5bd9bdd6f29f679de7c5fc58ddb9fe0.jpg"
+        url:"http://bit.ly/2kLtQtN"
       },
-
       {
         name:"me-at-GA",
         category:"questions",
-        url:"http://img.memecdn.com/this-is-me-asking-question-during-lecture_o_2887341.jpg"
+        url:"http://bit.ly/2l0lKfs"
       },
-
       {
         name:"escalation",
         category:"questions",
-        url:"https://s-media-cache-ak0.pinimg.com/564x/1e/34/41/1e344196b07a4540bef874277840a0f3.jpg"
+        url:"http://bit.ly/2kLubwz"
       },
-
       {
         name:"bear-arms",
         category:"questions",
-        url:"https://www.askideas.com/media/08/These-Bear-Arms-They-Coming-From-Funny-Question-Meme.jpg"
+        url:"http://bit.ly/2lHhdxD"
       },
-
       {
         name:"too-many-questions",
         category:"questions",
-        url:"http://s.quickmeme.com/img/0e/0ee1833745f41ce6bbccfecf68a3db80a650db11ffd346bca32c89dac5bacd45.jpg"
+        url:"http://bit.ly/2kjZlfN"
       },
-
       {
         name:"suprised",
         category:"coffee",
-        url:"http://imworld.aufeminin.com/story/20150401/coffee-meme-630521_w600h600.jpg"
+        url:"http://bit.ly/2kCRoyA"
       },
-
       {
         name:"no-speaky",
         category:"coffee",
-        url:"http://www.fullredneck.com/wp-content/uploads/2016/10/Funny-Coffee-Meme-21.jpg"
+        url:"http://bit.ly/2l7PMjy"
       },
-
       {
         name:"mordor-coffee",
         category:"coffee",
-        url:"http://www.fullredneck.com/wp-content/uploads/2016/10/Funny-Coffee-Meme-26.jpg"
+        url:"http://bit.ly/2koPXmo"
       },
-
       {
         name:"life-is-coffee",
         category:"coffee",
-        url:"http://www.relatably.com/m/img/adequate-memes/Coffee-holic.jpg"
+        url:"http://bit.ly/2kCRqq9"
       },
-
       {
         name:"accomplishments",
         category:"coffee",
-        url:"https://lolzthatswim.files.wordpress.com/2015/09/drink-coffee-meme.png"
+        url:"http://bit.ly/2l0i7pR"
       },
-
       {
         name:"summons",
         category:"coffee",
-        url:"https://img.buzzfeed.com/buzzfeed-static/static/2016-06/10/12/asset/buzzfeed-prod-web13/sub-buzz-29502-1465575753-1.png"
+        url:"http://bzfd.it/2lIfyZr"
       },
-
       {
         name:"monday-batman",
         category:"batman",
-        url:"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRZ32vY08-i_VlCG4DuJ0WsCdJWuLOkKxW7k63lUzh2eec0NVIjaA"
+        url:"http://bit.ly/2l0pflV"
       },
-
       {
         name:"friendly-cat",
         category:"animals",
-        url:"http://quotesnhumor.com/wp-content/uploads/2015/08/Top-30-Funny-animal-memes-and-quotes-Funniest-jokes.jpg"
+        url:"http://bit.ly/2lbZtgL"
       },
-
       {
         name:"lets-talk",
         category:"animals",
-        url:"https://s-media-cache-ak0.pinimg.com/originals/4a/41/9f/4a419f5b0a3254697a344f98b6d66bc0.jpg"
+        url:"http://bit.ly/2kCYJOD"
       },
-
       {
         name:"valid-complaint",
         category:"animals",
-        url:"http://2.media.dorkly.cvcdn.com/31/31/8defe9107b2d13845bb71b916ef83f4d.jpg"
+        url:"http://bit.ly/2lBRKtw"
       },
-
       {
         name:"creepy-sloth",
         category:"animals",
-        url:"http://thumbpress.com/wp-content/uploads/2012/07/Suspiciously-Evil-Sloth.jpg"
+        url:"http://bit.ly/2kCSri0"
       },
-
       {
         name:"jealous-dog",
         category:"animals",
-        url:"https://moshiqa.files.wordpress.com/2016/01/silly-animal-memes-17.jpg"
+        url:"http://bit.ly/2koTVvb"
       },
-
       {
         name:"capable-bear",
         category:"animals",
-        url:"https://amazinganimalphotos.com/wp-content/uploads/2014/11/chill-out-i-got-this-funny-animal-memes.jpg"
+        url:"http://bit.ly/2lHswWe"
       },
-
       {
         name:"get-in",
         category:"creepy-sloth",
-        url:"http://s2.quickmeme.com/img/a7/a7ffbe4f3f0b8454ced1bd2faccbd4540a4cab8f67c3f8a0d363744bd458895e.jpg"
+        url:"http://bit.ly/1Un63aX"
       },
-
       {
         name:"challenges",
         category:"creepy-sloth",
-        url:"https://s-media-cache-ak0.pinimg.com/236x/5f/40/8f/5f408f11d5d3d943e3f2ebde9d3b2b35.jpg"
+        url:"http://bit.ly/2kjE4mt"
       },
-
       {
         name:"creepy-family",
         category:"creepy-sloth",
-        url:"http://img.memecdn.com/sloths-know-how-to-party_o_2311877.jpg"
+        url:"http://bit.ly/2kLdfWN"
       },
-
       {
         name:"red-light",
         category:"creepy-sloth",
-        url:"http://images2.memedroid.com/images/UPLOADED24/517f5e5d62da3.jpeg"
+        url:"http://bit.ly/2kjRG1b"
       }
     ]
   }
