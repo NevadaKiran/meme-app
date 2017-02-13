@@ -1,5 +1,3 @@
-console.log('app.js works');
-
 angular.module('memeApp')
 //global data
 .controller('HomeController', HomeController)
@@ -25,31 +23,21 @@ function HomeController($scope, $http){
 }
 
 function AuthController($http, $state, $scope, $rootScope){
-  console.log('Hit AuthController function in app.js');
 
   var self = this;
 
-
   function signup(newUserInfo){
-    //test
-    console.log('hit signup function in AuthController in app.js');
-    console.log(newUserInfo);
 
     $http.post('/users', newUserInfo)
     .then(function(response){
-      console.log(response);
       $state.go('login');
     });
 
   }
 
   function login(userInfo) {
-    console.log('Hit Login Function');
-    console.log(userInfo);
     $http.post('/sessions/login', userInfo)
       .then(function(response) {
-        console.log(response);
-
         $scope.$emit('userLoggedIn', response.data.data);
         $rootScope.$emit('fetchData', response.data.data);
         $state.go('user');
@@ -57,7 +45,6 @@ function AuthController($http, $state, $scope, $rootScope){
   }
 
   function logout() {
-    console.log('Hit Logout Function');
     $http.delete('/sessions')
       .then(function(response) {
         $scope.$emit('userLoggedOut');
@@ -79,20 +66,18 @@ function MemeController($http, $state, $scope){
   self.newMeme = {};
   self.password = '';
   self.username = '';
+  // self.getSavedMemes = [];
   getBlankMemes();
   setConfig();
   getConfig();
 
  function showCreate(currentUser){
-   console.log('hit showCreate method in MemeController');
-   console.log(currentUser);
    $state.go('createMeme');
  }
 
  function getBlankMemes(){
    $http.get('https://api.imgflip.com/get_memes')
    .then(function(response){
-     console.log(response);
      self.blankMemes = response.data.data.memes;
    });
  }
@@ -100,14 +85,12 @@ function MemeController($http, $state, $scope){
  function setConfig(){
    $http.post('/config')
    .then(function(response){
-     console.log(response);
    });
  }
 
  function getConfig(){
    $http.get('/config')
    .then(function(response){
-     console.log(response);
      self.password = response.data.response[0].password;
      self.username = response.data.response[0].username;
 
@@ -136,11 +119,6 @@ function MemeController($http, $state, $scope){
 
      $http.post(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${self.username}&password=${self.password}&text0=${newMemeInfo.topText}&text1=${newMemeInfo.bottomText}`)
      .then(function(response) {
-       console.log('hit then');
-       console.log(newMemeInfo);
-       console.log(memeId);
-       console.log(currentUser);
-       console.log(response);
 
      self.newMeme = {
        name: newMemeInfo.name,
@@ -174,8 +152,6 @@ function MemeController($http, $state, $scope){
  }
 
  function showCreateMemeModal(meme){
-   console.log('hit modal');
-   console.log(meme);
    $(".modal-showNewMeme").children().css("display", "none");
    $("#modal").css("display", "block");
 
@@ -185,7 +161,6 @@ function MemeController($http, $state, $scope){
  }
 
  function closeCreateMemeModal(){
-   console.log('hit close modal');
    $("#modal").css("display", "none");
  }
 
@@ -203,7 +178,6 @@ function MemeController($http, $state, $scope){
 }
 
 function RandomMemeController($http, $state) {
-  console.log('hit RandomMemeController in app.js');
 
   var self = this;
 

@@ -6,7 +6,6 @@ router.get('/', function(req, res){
   Meme.find({})
   .exec(function(err, randomMemes){
     if(err){ console.log(err); }
-    console.log(randomMemes);
     res.json({randomMemes});
   });
 })
