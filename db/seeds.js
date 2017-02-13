@@ -2,12 +2,12 @@
 var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
 var Meme = require('../models/meme.js');
-
+var dotenv = require('dotenv').config();
 
 //all credit and documentation to this package can be found at https://github.com/seanemmer/mongoose-seed
 
 //mongoose-seed boiler plate
-seeder.connect('mongodb://localhost/meme-app', function(){
+seeder.connect(process.env.MONGODB_URI || 'mongodb://localhost/meme-app', function(){
   //load model
   seeder.loadModels(['./models/meme.js']);
 
