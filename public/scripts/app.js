@@ -68,8 +68,8 @@ function MemeController($http, $state, $scope){
   self.username = '';
   // self.getSavedMemes = [];
   getBlankMemes();
-  setConfig();
-  getConfig();
+  // setConfig();
+  // getConfig();
 
  function showCreate(currentUser){
    $state.go('createMeme');
