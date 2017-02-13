@@ -83,9 +83,12 @@ function MemeController($http, $state, $scope){
  function getSavedMemes(currentUser){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
+      console.log('getSavedMemes response');
       console.log(response);
       self.savedMemes = [];
       self.savedMemes = response.data.currentUser.memeList;
+      console.log('this is self.savedMemes from getSaveMeme');
+      console.log(self.savedMemes);
     })
   }
 
@@ -105,6 +108,9 @@ function MemeController($http, $state, $scope){
    then(function(response) {
      console.log('this is save meme response');
      console.log(response);
+     console.log('this is self.savedMemes from saveMeme');
+     console.log(self.savedMemes);
+     getSavedMemes(currentUser);
 
    });
  }
@@ -128,27 +134,20 @@ function MemeController($http, $state, $scope){
       self.memeUrl = response.data.url;
       console.log(self.memeUrl);
 
+      saveMeme(self.newMeme, self.memeUrl,  currentUser );
+
+
     $(".modal-showNewMeme").children().css("display", "block");
 
     $(".modal-body > form").css("display", "none");
 
-    saveMeme(self.newMeme, self.memeUrl,  currentUser );
-    getSavedMemes(currentUser);
     $state.go('user');
 
     });
 
-
-
-
-
-
-
-
     //  $(".modal-body").children().css("display", "none");
      //
     //  $(".modal-body").css("display", "block");
-
 
 }
 

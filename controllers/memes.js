@@ -20,8 +20,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/',function(req, res){
-  console.log('checking req.body');
-  console.log(req.body);
+
   User.findById(req.body.userId)
   .exec(function(err, user) {
     if(err){console.log(err);}
@@ -34,8 +33,7 @@ router.post('/',function(req, res){
 });
 
 router.post('/api', function(req, res) {
-
-  rp.post(`https://api.imgflip.com/caption_image?template_id=${req.body.memeId}&username=${process.env.IMG_FLIP_USERNAME}&password=${process.env.IMG_FLIP_PASSWORD}&text0=${req.body.topText}&text1=${req.body.bottomText}`)
+  rp.post(`https://api.imgflip.com/caption_image?template_id=${req.body.memeId}&username=${process.env.IMG_FLIP_USERNAME}&password=${process.env.IMG_FLIP_PASSWORD}&text0=${req.body.text0}&text1=${req.body.text1}`)
   .then(function(data) {
 
     res.json({url: JSON.parse(data).data.url});
