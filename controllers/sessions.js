@@ -3,10 +3,7 @@ var router = express.Router();
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
-console.log("SESSIONS");
-
 router.post('/login', authHelpers.loginUser, function(req, res){
-  console.log('sessions', req.session.currentUser);
   res.json({status: 200, data: req.session.currentUser});
 });
 
