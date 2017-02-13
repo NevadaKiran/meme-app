@@ -26,47 +26,47 @@ var memeData = [
     'documents':[
       {
       name:"pesos",
-      category:"Spanish",
+      category:"Spanish, laughing",
       url:"http://bit.ly/2lHg4Ge"
       },
       {
       name:"chistoso",
-      category:"Spanish",
+      category:"Spanish, grumpy-cat",
       url:"http://bit.ly/2lcgGqb"
       },
       {
       name:"bieber",
-      category:"Spanish",
+      category:"Spanish, philosoraptor",
       url:"http://bit.ly/2lc8JS2"
       },
       {
       name:"juicio",
-      category:"Spanish",
+      category:"Spanish, philosoraptor",
       url:"http://bit.ly/2lHaUdg"
       },
       {
       name:"Eyebrows",
-      category:"none-of-my-business-meme",
+      category:"none-of-my-business",
       url:"http://bit.ly/2lBSTkr"
       },
       {
         name:"gym",
-        category:"none-of-my-business-meme",
+        category:"none-of-my-business",
         url:"http://bit.ly/2kLeoxK"
       },
       {
       name:"drama",
-      category:"none-of-my-business-meme",
+      category:"none-of-my-business",
       url:"https://i.imgflip.com/gxx8r.jpg"
       },
       {
       name:"sign",
-      category:"none-of-my-business-meme",
+      category:"none-of-my-business",
       url:"https://i.imgflip.com/ackdo.jpg"
       },
       {
       name:"like a boss",
-      category:"none-of-my-business-meme",
+      category:"none-of-my-business, like-boss",
       url:"https://i.imgflip.com/aqq52.jpg"
       },
       {
@@ -81,7 +81,7 @@ var memeData = [
       },
       {
       name:"build an army",
-      category:"walk-into-mordor",
+      category:"walk-into-mordor, manatee",
       url:"http://bit.ly/2lBWv64"
       },
       {
@@ -91,7 +91,7 @@ var memeData = [
       },
       {
       name:"warp",
-      category:"walk-into-mordor",
+      category:"walk-into-mordor, star-trek",
       url:"http://bit.ly/2kLli63"
       },
       {
@@ -116,12 +116,12 @@ var memeData = [
       },
       {
         name:"check source",
-        category:"skeptical-hippo",
+        category:"skeptical-hippo, conspiracy",
         url:"http://bit.ly/2l0wbPV"
       },
       {
         name:"midget",
-        category:"skeptical-hippo",
+        category:"skeptical-hippo, cute",
         url:"http://bit.ly/2kD02gk"
       },
       {
@@ -156,12 +156,12 @@ var memeData = [
       },
       {
         name:"cesar-revenge",
-        category:"harambe",
+        category:"harambe, planet-of-apes, monkey",
         url:"https://i.ytimg.com/vi/RomBIQnj0Wc/0.jpg"
       },
       {
         name:"plenty-kids",
-        category:"harambe",
+        category:"harambe, monkey",
         url:"http://bit.ly/2l0dTyw"
       },
       {
@@ -171,7 +171,7 @@ var memeData = [
       },
       {
         name:"cool-vader",
-        category:"star-wars",
+        category:"star-wars, cool",
         url:"http://bit.ly/2kCVLcV"
       },
       {
@@ -181,27 +181,27 @@ var memeData = [
       },
       {
         name:"coffee-fail",
-        category:"star-wars, mongo",
+        category:"star-wars, fail, coffee",
         url:"http://bit.ly/2lItK4I"
       },
       {
-        name:"skepticism",
-        category:"star-wars",
+        name:"skeptic-Han",
+        category:"star-wars, skeptic",
         url:"http://bit.ly/2lBWore"
       },
       {
         name:"philosophy",
-        category:"star-wars",
+        category:"star-wars, philosoraptor",
         url:"http://smo.sh/2kLhiCC"
       },
       {
         name:"missing-dad",
-        category:"star-wars",
+        category:"star-wars, stormtrooper",
         url:"http://bit.ly/2kjMt9L"
       },
       {
         name:"missing-you",
-        category:"star-wars",
+        category:"star-wars, stormtrooper",
         url:"http://bit.ly/2lHwPRo"
       },
       {
@@ -221,7 +221,7 @@ var memeData = [
       },
       {
         name:"short-arms",
-        category:"philosoraptor",
+        category:"philosoraptor, tyrannosaurus-rex",
         url:"http://bit.ly/2lBGE7I"
       },
       {
@@ -262,7 +262,7 @@ var memeData = [
       },
       {
         name:"coffee-monkey",
-        category:"coffee",
+        category:"coffee, monkey",
         url:"http://bit.ly/2kLglKv"
       },
       {
@@ -277,47 +277,47 @@ var memeData = [
       },
       {
         name:"stupid-question",
-        category:"questions",
+        category:"questions, challenges",
         url:"http://bit.ly/2lc04ie"
       },
       {
         name:"g-o-t-questions",
-        category:"questions",
+        category:"questions, game-of-thrones",
         url:"http://bit.ly/2lbXNUv"
       },
       {
         name:"axe",
-        category:"questions",
+        category:"questions, psycho",
         url:"http://bit.ly/2kLtQtN"
       },
       {
         name:"me-at-GA",
-        category:"questions",
+        category:"questions, simpsons",
         url:"http://bit.ly/2l0lKfs"
       },
       {
-        name:"escalation",
-        category:"questions",
+        name:"angry-girl",
+        category:"questions, escalation",
         url:"http://bit.ly/2kLubwz"
       },
       {
         name:"bear-arms",
-        category:"questions",
+        category:"questions, bear",
         url:"http://bit.ly/2lHhdxD"
       },
       {
         name:"too-many-questions",
-        category:"questions",
+        category:"questions, ike",
         url:"http://bit.ly/2kjZlfN"
       },
       {
         name:"suprised",
-        category:"coffee",
+        category:"coffee, shocked",
         url:"http://bit.ly/2kCRoyA"
       },
       {
         name:"no-speaky",
-        category:"coffee",
+        category:"coffee, grumpy-cat",
         url:"http://bit.ly/2l7PMjy"
       },
       {
@@ -327,7 +327,7 @@ var memeData = [
       },
       {
         name:"life-is-coffee",
-        category:"coffee",
+        category:"coffee, chart",
         url:"http://bit.ly/2kCRqq9"
       },
       {
@@ -342,37 +342,37 @@ var memeData = [
       },
       {
         name:"monday-batman",
-        category:"batman",
+        category:"batman, coffee",
         url:"http://bit.ly/2l0pflV"
       },
       {
         name:"friendly-cat",
-        category:"animals",
+        category:"animals, cute",
         url:"http://bit.ly/2lbZtgL"
       },
       {
         name:"lets-talk",
-        category:"animals",
+        category:"animals, racoon",
         url:"http://bit.ly/2kCYJOD"
       },
       {
         name:"valid-complaint",
-        category:"animals",
+        category:"animals, bear",
         url:"http://bit.ly/2lBRKtw"
       },
       {
         name:"creepy-sloth",
-        category:"animals",
+        category:"animals, creepy-sloth",
         url:"http://bit.ly/2kCSri0"
       },
       {
         name:"jealous-dog",
-        category:"animals",
+        category:"animals, dog",
         url:"http://bit.ly/2koTVvb"
       },
       {
         name:"capable-bear",
-        category:"animals",
+        category:"animal, bear",
         url:"http://bit.ly/2lHswWe"
       },
       {
