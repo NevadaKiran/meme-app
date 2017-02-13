@@ -117,34 +117,44 @@ function MemeController($http, $state, $scope){
  }
   function createMeme(newMemeInfo, memeId, currentUser) {
 
-     $http.post(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${self.username}&password=${self.password}&text0=${newMemeInfo.topText}&text1=${newMemeInfo.bottomText}`)
-     .then(function(response) {
+    self.newMeme = {
+     name: newMemeInfo.name,
+     category: newMemeInfo.category,
+     text0: newMemeInfo.topText,
+     text1: newMemeInfo.bottomText,
+     memeId: memeId,
+     currentUser: currentUser
+    }
+    console.log(self.newMeme);
 
-     self.newMeme = {
-       name: newMemeInfo.name,
-       category: newMemeInfo.category,
-       url: response.data.data.url,
-       text0: newMemeInfo.topText,
-       text1: newMemeInfo.bottomText,
-       currentUser: currentUser
-      }
-      console.log(self.newMeme);
+    $http.post(`/user/${currentUser}/meme`, self.newMeme)
+    .then(function(response) {
+      console.log('response from backend');
+      console.log(response);
+    // self.memeUrl = response.data.data.url;
 
-      self.memeUrl = response.data.data.url;
+    // $(".modal-showNewMeme").children().css("display", "block");
+    //
+    // $(".modal-body > form").css("display", "none");
+    //
+    // saveMeme(self.newMeme, currentUser);
+    // getSavedMemes(currentUser);
+    // $state.go('user');
 
-     $(".modal-showNewMeme").children().css("display", "block");
+    });
 
-     $(".modal-body > form").css("display", "none");
 
-     saveMeme(self.newMeme, currentUser);
-     getSavedMemes(currentUser);
-     $state.go('user');
+
+
+
+
+
 
     //  $(".modal-body").children().css("display", "none");
      //
     //  $(".modal-body").css("display", "block");
 
-   });
+
 }
 
  function editCreateMeme(){

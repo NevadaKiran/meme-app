@@ -22,11 +22,6 @@ var UserSchema = new Schema({
   memeList: [MemeSchema]
 });
 
-var ConfigSchema = new Schema({
-  username: String,
-  password: String,
-});
-
 MemeSchema.pre('save', function(next) {
   now = new Date();
   this.updated_at = now;
@@ -43,20 +38,10 @@ UserSchema.pre('save', function(next) {
   next()
 });
 
-ConfigSchema.pre('save', function(next) {
-  now = new Date();
-  this.updated_at = now;
-
-  if (!this.created_at) { this.created_at = now }
-  next()
-});
-
 var UserModel = mongoose.model('User', UserSchema);
 var MemeModel = mongoose.model('Meme', MemeSchema);
-var ConfigModel = mongoose.model('Config', ConfigSchema);
 
 module.exports = {
   User: UserModel,
-  Meme: MemeModel,
-  Config: ConfigModel
+  Meme: MemeModel
 };
