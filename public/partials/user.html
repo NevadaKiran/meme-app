@@ -11,8 +11,9 @@
   </section>
 
   <section class="middleUserPage">
-    <div class="savedMemes">
-      <h2 class="userTitles">Saved Memes</h2>
+    <h2 class="userTitles">Saved Memes</h2>
+    <div ng-init="meme.getSavedMemes(home.currentUser_id)" class="savedMemes" ng-repeat="memes in meme.savedMemes">
+      <img src="{{memes.url}}" alt="{{memes.name}}">
     </div>
   </section>
 

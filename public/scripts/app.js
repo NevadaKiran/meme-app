@@ -77,6 +77,7 @@ function MemeController($http, $state, $scope){
   self.newMeme = {};
   self.password = '';
   self.username = '';
+  getSavedMemes();
   getBlankMemes();
   setConfig();
   getConfig();
