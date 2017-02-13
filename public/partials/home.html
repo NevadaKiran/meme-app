@@ -1,0 +1,14 @@
+<div class="homeSearch">
+  <form id="searchMemes">
+    <label for="mainSearch"><h2>Looking for a Meme?</h2></label>
+    <input id="mainSearch" type="text" placeholder="Search for Memes" ng-model="searchBar">
+  </form>
+</div>
+<br>
+<br>
+<div class="homeMemes">
+  <div class="eachMeme" ng-repeat="meme in rand.shuffledMemesData | filter: searchBar">
+    <img ng-src="{{meme.url}}" alt="{{meme.name}}"><br>
+    <!-- <i class="fa fa-heart"><i class="fa fa-star"><i class="fa fa-edit"><i class="fa fa-remove"> -->
+  </div>
+</div>

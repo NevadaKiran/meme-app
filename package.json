@@ -1,0 +1,35 @@
+{
+  "name": "meme-app",
+  "version": "1.0.0",
+  "description": "## App Title: TBD",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NevadaKiran/meme-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NevadaKiran/meme-app/issues"
+  },
+  "homepage": "https://github.com/NevadaKiran/meme-app#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.0",
+    "http": "0.0.0",
+    "json": "^9.0.4",
+    "mongoose": "^4.8.1",
+    "mongoose-seed": "^0.3.1",
+    "morgan": "^1.8.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}
