@@ -175,6 +175,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   margin-bottom: 2em;
+  padding-top: 0;
 }
 
 .modal-showNewMeme > img, span{
@@ -182,7 +183,20 @@ header {
 }
 
 .modal-showNewMeme > h2{
-  margin: 2em auto;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.modal-showNewMeme > span{
+  display: inline;
+}
+.previewButtons{
+  display: flex;
+  flex-direction: row;
+}
+.previewButtons > span{
+  text-align: center;
+  margin: auto;
 }
 /***************  modal *********************/
 /*credit: code by ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp*/

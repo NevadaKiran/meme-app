@@ -10,7 +10,6 @@ angular.module('memeApp')
 //deals with seeded memes
 .controller('RandomMemeController', RandomMemeController);
 
-
 function HomeController($scope, $http){
   var self = this;
 
@@ -76,8 +75,10 @@ function MemeController($http, $state, $scope){
   self.memeId = '';
   self.memeName = '';
   self.newMeme = {};
+  self.password = '';
+  self.username = '';
   getBlankMemes();
-
+  getConfig();
 
  function showCreate(currentUser){
    console.log('hit showCreate method in MemeController');
@@ -93,26 +94,81 @@ function MemeController($http, $state, $scope){
    });
  }
 
-  function createMeme(newMeme, id) {
-     $http.post(`https://api.imgflip.com/caption_image?template_id=${id}&username=acpbm&password=305238T7K*uI&text0=${newMeme.topText}&text1=${newMeme.bottomText}`)
+ function setConfig(){
+   $http.post('/config')
+   .then(function(response){
+     console.log(response);
+   });
+ }
+
+ function getConfig(){
+   $http.get('/config')
+   .then(function(response){
+     console.log(response);
+     self.password = response.data.response[0].password;
+     self.username = response.data.response[0].username;
+
+     console.log('hjgjsgfjsdhfsd');
+     console.log(self.password, self.username);
+
+   });
+ }
+
+ function saveMeme(newMeme, currentUser){
+   $http.post(`/user/${currentUser}/meme`, newMeme).
+   then(function(response) {
+     console.log(response);
+     $state.go('user');
+   });
+ }
+  function createMeme(newMemeInfo, memeId, currentUser) {
+    newMemeRequst = {
+      template_id: memeId,
+      text0: newMemeInfo.topText,
+      text1: newMemeInfo.bottomText
+    }
+
+     $http.post(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${self.username}&password=${self.password}&text0=${newMemeInfo.topText}&text1=${newMemeInfo.bottomText}`)
      .then(function(response) {
+       console.log('hit then');
+       console.log(newMemeInfo);
+       console.log(memeId);
+       console.log(currentUser);
        console.log(response);
-       self.newMeme = {
-         name: newMeme.name,
-         category: newMeme.category,
-         url: response.data.data.url
-        }
-        console.log(self.newMeme);
-       self.memeUrl = response.data.data.url;
-       $(".modal-body").css("display", "none");
-       $(".modal-body").children().css("display", "none");
-        $(".modal-body").css("display", "block");
-     });
-  }
+
+     self.newMeme = {
+       name: newMemeInfo.name,
+       category: newMemeInfo.category,
+       url: response.data.data.url,
+       text0: newMemeInfo.topText,
+       text1: newMemeInfo.bottomText,
+       currentUser: currentUser
+      }
+      console.log(self.newMeme);
+
+      self.memeUrl = response.data.data.url;
+
+     $(".modal-showNewMeme").children().css("display", "block");
+
+     $(".modal-body > form").css("display", "none");
+
+     saveMeme(self.newMeme, currentUser);
+
+    //  $(".modal-body").children().css("display", "none");
+     //
+    //  $(".modal-body").css("display", "block");
+
+   });
+}
+
+ function editCreateMeme(){
+
+ }
 
  function showCreateMemeModal(meme){
    console.log('hit modal');
    console.log(meme);
+   $(".modal-showNewMeme").children().css("display", "none");
    $("#modal").css("display", "block");
 
    self.memeUrl = meme.url;
@@ -132,6 +188,9 @@ function MemeController($http, $state, $scope){
  self.showCreateMemeModal = showCreateMemeModal;
  self.showCreate = showCreate;
  self.getBlankMemes = getBlankMemes;
+ self.setConfig = setConfig;
+ self.getConfig = getConfig;
+ self.saveMeme = saveMeme;
 }
 
 function RandomMemeController($http, $state) {

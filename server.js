@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+var json = require('json');
+var dotenv = require('dotenv').config();
 
 // CONTROLLERS
 var memesController = require('./controllers/memes.js');
@@ -11,8 +13,10 @@ var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 var randomMemeController = require('./controllers/randomMemeController.js');
 
+var configController = require('./controllers/configController.js');
 var app = express();
 
+//------------------------------
 // MIDDLEWARE
 app.use(express.static('public'));
 
@@ -33,6 +37,7 @@ app.use('/memes', randomMemeController);
 app.use('/users', usersController);
 app.use('/user/:id/meme', memesController);
 app.use('/sessions', sessionsController);
+app.use('/config', configController);
 
 // LISTENERS
 app.listen(3000, function(){
