@@ -78,6 +78,7 @@ function MemeController($http, $state, $scope){
   self.password = '';
   self.username = '';
   getBlankMemes();
+  setConfig();
   getConfig();
 
  function showCreate(currentUser){
@@ -108,9 +109,7 @@ function MemeController($http, $state, $scope){
      self.password = response.data.response[0].password;
      self.username = response.data.response[0].username;
 
-     console.log('hjgjsgfjsdhfsd');
-     console.log(self.password, self.username);
-
+    
    });
  }
 
@@ -181,7 +180,7 @@ function MemeController($http, $state, $scope){
    $("#modal").css("display", "none");
  }
 
- 
+
 
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
