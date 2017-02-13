@@ -9,6 +9,6 @@
   </form>
   <br>
   <div class="signUpMemes" ng-repeat="meme in rand.shuffledMemesData | limitTo: 2">
-    <img src="{{meme.url}}" alt="{{meme.name}}">
+    <img ng-src="{{meme.url}}" alt="{{meme.name}}">
   </div>
 </div>

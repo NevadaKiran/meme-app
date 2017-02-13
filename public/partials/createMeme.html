@@ -17,7 +17,7 @@
       </div>
       <div class="modal-body">
         <p>{{meme.memeName}}</p>
-        <img src="{{meme.memeUrl}}" alt="{{meme.memeName}}">
+        <img ng-src="{{meme.memeUrl}}" alt="{{meme.memeName}}">
         <form ng-submit="meme.createMeme(newMeme, meme.memeId, home.currentUser._id)">
           <!-- <label for="">Edit meme</label> -->
           <input type="text" ng-model="newMeme.name" placeholder="name">
@@ -33,7 +33,7 @@
   <section class="blankMemeContainer" >
 
     <div  ng-click="meme.showCreateMemeModal(blank)" class="blankMemes" ng-repeat="blank in meme.blankMemes | filter: searchValue">
-      <img src="{{blank.url}}" alt="{{blank.name}}">
+      <img ng-src="{{blank.url}}" alt="{{blank.name}}">
     </div>
 
   </section>
