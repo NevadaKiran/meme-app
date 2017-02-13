@@ -3,6 +3,10 @@ var router = express.Router();
 var Meme = require('../models/meme.js');
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
+var request = require('request');
+var dotenv = require('dotenv').config();
+var rp = require('request-promise');
+var http = require('http');
 
 router.get('/', function(req, res) {
   User.findById({})
@@ -15,22 +19,28 @@ router.get('/', function(req, res) {
     });
 });
 
-router.post('/', function(req, res) {
+router.post('/',function(req, res){
 
-  var meme = new Meme({
-    name: req.body.name,
-    url: req.body.url,
-    category: req.body.category,
-    text0: req.body.text0,
-    text1: req.body.text1
-  });
+  User.findById(req.body.userId)
+  .exec(function(err, user) {
+    if(err){console.log(err);}
 
-  User.findById(req.body.currentUser)
-  .exec(function(err, user){
-    if(err){ console.log(err); }
-    user.memeList.push(meme);
+    var newMeme = new Meme(req.body);
+    user.memeList.push(newMeme);
     user.save();
+    res.json({newMeme})
   });
 });
+
+router.post('/api', function(req, res) {
+  rp.post(`https://api.imgflip.com/caption_image?template_id=${req.body.memeId}&username=${process.env.IMG_FLIP_USERNAME}&password=${process.env.IMG_FLIP_PASSWORD}&text0=${req.body.text0}&text1=${req.body.text1}`)
+  .then(function(data) {
+
+    res.json({url: JSON.parse(data).data.url});
+  });
+
+});
+
+
 
 module.exports = router;

@@ -13,7 +13,6 @@ var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 var randomMemeController = require('./controllers/randomMemeController.js');
 
-var configController = require('./controllers/configController.js');
 var app = express();
 
 //------------------------------
@@ -30,6 +29,7 @@ app.use(morgan('dev'));
 app.use(session({
   secret: "solange",
   resave: true,
+  maxAge: 20 * 60 * 1000,
   saveUninitialized: false
 }));
 
@@ -37,7 +37,6 @@ app.use('/memes', randomMemeController);
 app.use('/users', usersController);
 app.use('/user/:id/meme', memesController);
 app.use('/sessions', sessionsController);
-app.use('/config', configController);
 
 // LISTENERS
 app.listen(3000, function(){
