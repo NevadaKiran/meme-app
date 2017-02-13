@@ -115,10 +115,11 @@ function MemeController($http, $state, $scope){
  }
 
  function saveMeme(newMeme, currentUser){
+   console.log(currentUser);
    $http.post(`/user/${currentUser}/meme`, newMeme).
    then(function(response) {
      console.log(response);
-     $state.go('user');
+
    });
  }
   function createMeme(newMemeInfo, memeId, currentUser) {
@@ -153,6 +154,7 @@ function MemeController($http, $state, $scope){
      $(".modal-body > form").css("display", "none");
 
      saveMeme(self.newMeme, currentUser);
+     $state.go('user');
 
     //  $(".modal-body").children().css("display", "none");
      //
