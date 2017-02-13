@@ -79,7 +79,6 @@ function MemeController($http, $state, $scope){
   self.newMeme = {};
   self.password = '';
   self.username = '';
-  // getSavedMemes();
   getBlankMemes();
   setConfig();
   getConfig();
@@ -115,14 +114,15 @@ function MemeController($http, $state, $scope){
 
    });
  }
-function getSavedMemes(currentUser){
+
+ function getSavedMemes(currentUser){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
       console.log(response);
+      self.savedMemes = [];
       self.savedMemes = response.data.currentUser.memeList;
-
     })
-}
+  }
 
  function saveMeme(newMeme, currentUser){
    console.log(currentUser);
@@ -133,11 +133,6 @@ function getSavedMemes(currentUser){
    });
  }
   function createMeme(newMemeInfo, memeId, currentUser) {
-    newMemeRequst = {
-      template_id: memeId,
-      text0: newMemeInfo.topText,
-      text1: newMemeInfo.bottomText
-    }
 
      $http.post(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${self.username}&password=${self.password}&text0=${newMemeInfo.topText}&text1=${newMemeInfo.bottomText}`)
      .then(function(response) {

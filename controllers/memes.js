@@ -6,7 +6,6 @@ var Meme = require('../models/meme.js');
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
-//post request to imfFlip for meme creation
 router.get('/', function(req, res) {
   User.findById({})
     .exec(function(err, user) {
