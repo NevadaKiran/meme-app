@@ -10,9 +10,9 @@
     </div>
   </section>
 
-  <section class="middleUserPage">
+  <section class="middleUserPage" ng-init="meme.getSavedMemes(home.currentUser_id)">
     <h2 class="userTitles">Saved Memes</h2>
-    <div ng-init="meme.getSavedMemes(home.currentUser_id)" class="savedMemes" ng-repeat="memes in meme.savedMemes">
+    <div  class="savedMemes" ng-repeat="memes in meme.savedMemes">
       <img src="{{memes.url}}" alt="{{memes.name}}">
     </div>
   </section>

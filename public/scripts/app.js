@@ -20,6 +20,8 @@ function HomeController($scope, $http){
   $scope.$on('userLoggedOut', function(event, data) {
     self.currentUser = null;
   })
+
+  // $broadcast('currentUser', self.currentUser);
 }
 
 function AuthController($http, $state, $scope, $rootScope){
@@ -77,7 +79,7 @@ function MemeController($http, $state, $scope){
   self.newMeme = {};
   self.password = '';
   self.username = '';
-  getSavedMemes();
+  // getSavedMemes();
   getBlankMemes();
   setConfig();
   getConfig();
@@ -162,6 +164,7 @@ function getSavedMemes(currentUser){
      $(".modal-body > form").css("display", "none");
 
      saveMeme(self.newMeme, currentUser);
+     getSavedMemes(currentUser);
      $state.go('user');
 
     //  $(".modal-body").children().css("display", "none");
