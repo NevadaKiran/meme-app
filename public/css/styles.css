@@ -82,6 +82,10 @@ button {
   padding: 5px;
 }
 
+.signUpMemes, .loginMemes {
+  display: inline-flex;
+}
+
 /*User Partial*/
 header {
   text-align: center;

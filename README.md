@@ -1,6 +1,6 @@
 # Meme Generator App
 
-## App Title: TBD
+## App Title: All The Memes
 
 ## What Will This App Do?
 When you log in, it needs a user. A user has the ability to search and store memes. A user can also search for a meme by its subject/category. A user can also name the meme, save it, edit it, and delete it.
@@ -105,21 +105,22 @@ var exampleUser = {
 ### Folder Structure:
 ```
 controllers
-- users.js
 - memes.js
+- randomMemeController.js
+- sessions.js
+- users.js
 db
 - schema.js
-models
-- users.js
-- memes.js
+- seeds.js
 helpers
 - auth.js
+models
+- meme.js
+- user.js
 public
 - css
- - style.css
-- scripts
- - app.js
- - router.js
+ - styles.css
+- images
 - partials
  - home.html -> display top memes and user memes
  - user.html -> display user favorite memes and top memes
@@ -127,11 +128,14 @@ public
  - login.html -> user login form
  - signup.html -> user signup form
  - generator.html -> meme creation form (Reach Goal)
+- scripts
+ - app.js
+ - router.js
 - index.html -> nav bar and search bar
 Procfile
 package.json
-server.js
 Readme.md
+server.js
 ```
 ### Required Packages
 ```
@@ -141,7 +145,6 @@ Body Parser
 Morgan
 bCrypt
 Express-session
-pryjs?
 ```
 
 ## MVP Goals
