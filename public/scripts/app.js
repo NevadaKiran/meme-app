@@ -66,10 +66,8 @@ function MemeController($http, $state, $scope){
   self.newMeme = {};
   self.password = '';
   self.username = '';
-  // self.getSavedMemes = [];
   getBlankMemes();
-  // setConfig();
-  // getConfig();
+
 
  function showCreate(currentUser){
    $state.go('createMeme');
@@ -82,22 +80,6 @@ function MemeController($http, $state, $scope){
    });
  }
 
- function setConfig(){
-   $http.post('/config')
-   .then(function(response){
-   });
- }
-
- function getConfig(){
-   $http.get('/config')
-   .then(function(response){
-     self.password = response.data.response[0].password;
-     self.username = response.data.response[0].username;
-
-
-   });
- }
-
  function getSavedMemes(currentUser){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
@@ -107,10 +89,21 @@ function MemeController($http, $state, $scope){
     })
   }
 
- function saveMeme(newMeme, currentUser){
+ function saveMeme(newMeme, url, currentUser){
    console.log(currentUser);
-   $http.post(`/user/${currentUser}/meme`, newMeme).
+
+   var newMemeInfo = {
+     name: newMeme.name,
+     category: newMeme.category,
+     text0: newMeme.text0,
+     text1: newMeme.text1,
+     userId: currentUser,
+     url: url
+   }
+
+   $http.post(`/user/${currentUser}/meme`, newMemeInfo).
    then(function(response) {
+     console.log('this is save meme response');
      console.log(response);
 
    });
@@ -127,19 +120,21 @@ function MemeController($http, $state, $scope){
     }
     console.log(self.newMeme);
 
-    $http.post(`/user/${currentUser}/meme`, self.newMeme)
+    $http.post(`/user/${currentUser}/meme/api`, self.newMeme)
     .then(function(response) {
       console.log('response from backend');
       console.log(response);
-    // self.memeUrl = response.data.data.url;
+      console.log('this is the url');
+      self.memeUrl = response.data.url;
+      console.log(self.memeUrl);
 
-    // $(".modal-showNewMeme").children().css("display", "block");
-    //
-    // $(".modal-body > form").css("display", "none");
-    //
-    // saveMeme(self.newMeme, currentUser);
-    // getSavedMemes(currentUser);
-    // $state.go('user');
+    $(".modal-showNewMeme").children().css("display", "block");
+
+    $(".modal-body > form").css("display", "none");
+
+    saveMeme(self.newMeme, self.memeUrl,  currentUser );
+    getSavedMemes(currentUser);
+    $state.go('user');
 
     });
 
@@ -181,8 +176,6 @@ function MemeController($http, $state, $scope){
  self.showCreateMemeModal = showCreateMemeModal;
  self.showCreate = showCreate;
  self.getBlankMemes = getBlankMemes;
- self.setConfig = setConfig;
- self.getConfig = getConfig;
  self.saveMeme = saveMeme;
  self.getSavedMemes = getSavedMemes;
 }

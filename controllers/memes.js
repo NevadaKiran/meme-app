@@ -19,22 +19,30 @@ router.get('/', function(req, res) {
     });
 });
 
-router.post('/', function(req, res) {
-  // 1. set the config
-  // 2. make the post request to imgflip
-  console.log('req.body content');
+router.post('/',function(req, res){
+  console.log('checking req.body');
   console.log(req.body);
+  User.findById(req.body.userId)
+  .exec(function(err, user) {
+    if(err){console.log(err);}
+
+    var newMeme = new Meme(req.body);
+    user.memeList.push(newMeme);
+    user.save();
+    res.json({newMeme})
+  });
+});
+
+router.post('/api', function(req, res) {
 
   rp.post(`https://api.imgflip.com/caption_image?template_id=${req.body.memeId}&username=${process.env.IMG_FLIP_USERNAME}&password=${process.env.IMG_FLIP_PASSWORD}&text0=${req.body.topText}&text1=${req.body.bottomText}`)
   .then(function(data) {
-    // the data from img flip
-    console.log('response from imgflip');
-    console.log(data);
-    console.log(JSON.parse(data).data.url);
 
     res.json({url: JSON.parse(data).data.url});
   });
-  
+
 });
+
+
 
 module.exports = router;
