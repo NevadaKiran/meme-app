@@ -36,6 +36,8 @@
   <section class="middleUserPage">
     <h2 class="userTitles">Saved Memes</h2>
     <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
+      <h4>{{memes.name}}</h4>
+      <h6>category: {{memes.category}}</h6>
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart userIcons iconSave"> Save</i>

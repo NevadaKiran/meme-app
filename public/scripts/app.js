@@ -99,18 +99,22 @@ function MemeController($http, $state, $scope, $stateParams){
     });
   }
 
- function editMeme(update, memeId, userId){
+ function editMeme(currentUser){
+
    console.log('hit editCreateMeme');
-   console.log(update);
-   console.log(memeId);
-   console.log(userId);
+   console.log(self.editMemeValue);
+   console.log(currentUser);
 
-  //  showEditModal(meme);
 
-  //  $http.put(`/user/${currentUser}/meme/${memeId}`, )
-  //  .then(function(response) {
-  //    console.log('response');
-  //  });
+
+   $http.put(`/user/${currentUser}/meme/${self.editMemeValue._id}`, self.editMemeValue)
+   .then(function(response) {
+     console.log('response');
+
+     getSavedMemes(currentUser);
+     
+   });
+   closeEditModal();
  }
 
  function favoriteMeme(currentUser, meme){

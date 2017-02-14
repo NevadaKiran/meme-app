@@ -46,6 +46,7 @@ router.post('/api', function(req, res) {
 
 router.put('/:id', function(req, res) {
   console.log('hit backend put route');
+  console.log(req.body);
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
       console.log('Checking Meme List Id');
