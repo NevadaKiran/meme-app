@@ -152,7 +152,7 @@ header h3:hover {
   flex-grow: 1;
 }
 
-.userMemeFeed, .savedMemes {
+.userMemeFeed, .savedMemes, .favoriteMemes {
   display: flex;
   flex-direction: column;
   padding: 1em;

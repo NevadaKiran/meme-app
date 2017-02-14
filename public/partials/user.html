@@ -28,8 +28,16 @@
 <!-- ******************************************************** -->
 <section class="containerUserPage">
   <section class="leftUserPage">
-    <div class="favoriteMemes">
-      <h2 class="userTitles">Favorites</h2>
+    <h2 class="userTitles">Favorite Memes</h2>
+    <div class="favoriteMemes" ng-repeat="memes in meme.favoriteMeme">
+      <h4 class="userTitles">{{memes.name}}</h4>
+      <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
+      <div class="userMemeLists">
+        <i ng-click="meme.favoriteMeme(home.currentUser._id, memes._id)" class="fa fa-star userIcons iconFavorite"> Favorite</i>
+        <i ng-click="meme.showEditModal(memes)" class="fa fa-edit userIcons iconEdit"> Edit</i>
+        <i ng-click="meme.deleteMeme(home.currentUser._id, memes._id)" class="fa fa-remove userIcons iconDelete"> Delete</i>
+      </div>
+      <h6 class="userTitles">Category: {{memes.category}}</h6>
     </div>
   </section>
 
