@@ -99,9 +99,62 @@ function MemeController($http, $state, $scope, $stateParams){
     });
   }
 
- function editCreateMeme(){
+ function editMeme(currentUser){
 
+   console.log('hit editCreateMeme');
+   console.log(self.editMemeValue);
+   console.log(currentUser);
+
+
+
+   $http.put(`/user/${currentUser}/meme/${self.editMemeValue._id}`, self.editMemeValue)
+   .then(function(response) {
+     console.log('response');
+
+     getSavedMemes(currentUser);
+
+   });
+   closeEditModal();
  }
+
+ function favoriteMeme(currentUser, meme){
+   console.log('favoriteMeme');
+   console.log(currentUser);
+   console.log(meme);
+
+   var isFav = null;
+   if (meme.favorite === false) {
+     isFav = true;
+     $('.userMemeLists > #fav').css('color', '#FFD452');
+   } else {
+     isFav = false;
+     $('.userMemeLists > #fav').css('color', '#F5F5F5');
+   }
+
+   var favMeme = {
+     name: meme.name,
+     category: meme.category,
+     favorite: isFav
+   }
+
+   $http.put(`/user/${currentUser}/meme/${meme._id}`, favMeme)
+   .then(function(response) {
+     console.log('response');
+     console.log(response);
+     getSavedMemes(currentUser);
+   });
+ }
+
+  function showEditModal (meme){
+    $(".editMemeModal").css("display", "block");
+    console.log(meme);
+
+    self.editMemeValue = meme;
+  }
+
+  function closeEditModal (){
+    $("#editModal").css("display", "none");
+  }
 
  function showCreateMemeModal(meme){
    $(".modal-showNewMeme").children().css("display", "none");
@@ -122,8 +175,10 @@ function MemeController($http, $state, $scope, $stateParams){
    getSavedMemes(currentUser);
   })
  }
-
-
+ self.closeEditModal = closeEditModal;
+ self.showEditModal= showEditModal;
+ self.favoriteMeme = favoriteMeme;
+ self.editMeme = editMeme;
  self.deleteMeme = deleteMeme;
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;

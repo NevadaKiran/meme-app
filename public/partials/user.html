@@ -3,6 +3,29 @@
   <h3 ng-click="meme.showCreate(home.currentUser)">Create A Meme!</h3>
 </header>
 
+<!-- *************** modal  *********************** -->
+<!-- setup credit to ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp -->
+<div id="editModal" class="editMemeModal">
+  <div class="modalContent">
+    <div class="modal-header">
+      <span ng-click="meme.closeEditModal()" id="closeEdit" class="close">&times;</span>
+      <h2>Create a meme</h2>
+    </div>
+    <div class="modal-body">
+      <p>{{meme.editMemeValue.name}}</p>
+      <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.editMemeValue.name}}">
+      <form ng-submit="meme.editMeme(home.currentUser._id)">
+        <label for="">Name</label>
+        <input type="text"  ng-model="meme.editMemeValue.name">
+        <label for="">Category</label>
+        <input type="text"  ng-model="meme.editMemeValue.category">
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ******************************************************** -->
 <section class="containerUserPage">
   <section class="leftUserPage">
     <div class="favoriteMemes">
@@ -13,11 +36,13 @@
   <section class="middleUserPage">
     <h2 class="userTitles">Saved Memes</h2>
     <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
+      <h4>{{memes.name}}</h4>
+      <h6>category: {{memes.category}}</h6>
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart userIcons iconSave"> Save</i>
-        <i class="fa fa-star userIcons iconFavorite"> Favorite</i>
-        <i class="fa fa-edit userIcons iconEdit"> Edit</i>
+        <i id="fav" ng-click="meme.favoriteMeme(home.currentUser._id, memes)" class="fa fa-star userIcons iconFavorite"> Favorite</i>
+        <i ng-click="meme.showEditModal(memes)" class="fa fa-edit userIcons iconEdit"> Edit</i>
         <i ng-click="meme.deleteMeme(home.currentUser._id, memes._id)" class="fa fa-remove userIcons iconDelete"> Delete</i>
       </div>
     </div>
