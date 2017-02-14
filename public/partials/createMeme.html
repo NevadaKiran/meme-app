@@ -16,7 +16,7 @@
         <h2>Create a meme</h2>
       </div>
       <div class="modal-body">
-        <h3>{{meme.memeName}}</h3>
+        <h3 class="modalTitle">{{meme.memeName}}</h3>
         <img ng-src="{{meme.memeUrl}}" alt="{{meme.memeName}}">
         <form ng-submit="meme.createMeme(newMeme, meme.memeId, home.currentUser._id)">
           <input type="text" ng-model="newMeme.name" placeholder="name">

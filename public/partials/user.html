@@ -12,7 +12,7 @@
       <h2>Edit Your Meme</h2>
     </div>
     <div class="modal-body">
-      <h3>{{meme.editMemeValue.name}}</h3>
+      <h3 class="modalTitle">{{meme.editMemeValue.name}}</h3>
       <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.editMemeValue.name}}">
       <form ng-submit="meme.editMeme(home.currentUser._id)">
         <label for="">Name</label>
