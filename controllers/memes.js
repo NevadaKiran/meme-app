@@ -57,4 +57,9 @@ router.delete('/:id', function(req, res){
      })
 });
 
+router.put('/:id', function(req, res) {
+  console.log('hit backend put route');
+
+});
+
 module.exports = router;

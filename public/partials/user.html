@@ -16,8 +16,8 @@
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart userIcons iconSave"> Save</i>
-        <i class="fa fa-star userIcons iconFavorite"> Favorite</i>
-        <i class="fa fa-edit userIcons iconEdit"> Edit</i>
+        <i ng-click="meme.favoriteMeme(home.currentUser._id, memes)" class="fa fa-star userIcons iconFavorite"> Favorite</i>
+        <i ng-click="meme.editMeme(home.currentUser._id, memes)" class="fa fa-edit userIcons iconEdit"> Edit</i>
         <i ng-click="meme.deleteMeme(home.currentUser._id, memes._id)" class="fa fa-remove userIcons iconDelete"> Delete</i>
       </div>
     </div>

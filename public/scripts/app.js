@@ -99,8 +99,26 @@ function MemeController($http, $state, $scope, $stateParams){
     });
   }
 
- function editCreateMeme(){
+ function editMeme(currentUser, meme){
+   console.log('hit editCreateMeme');
+   console.log(currentUser);
+   console.log(meme);
 
+  //  $http.put(`/user/${currentUser}/meme/${memeId}`, )
+  //  .then(function(response) {
+  //    console.log('response');
+  //  });
+ }
+
+ function favoriteMeme(currentUser, meme){
+   console.log('favoriteMeme');
+   console.log(currentUser);
+   console.log(meme);
+
+   $http.put(`/user/${currentUser}/meme/${meme._id}`)
+   .then(function(response) {
+     console.log('response');
+   });
  }
 
  function showCreateMemeModal(meme){
@@ -122,8 +140,8 @@ function MemeController($http, $state, $scope, $stateParams){
    getSavedMemes(currentUser);
   })
  }
-
-
+ self.favoriteMeme = favoriteMeme;
+ self.editMeme = editMeme;
  self.deleteMeme = deleteMeme;
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
