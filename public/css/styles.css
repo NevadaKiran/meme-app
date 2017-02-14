@@ -6,10 +6,6 @@ body {
 }
 
 /*Nav Bar*/
-/*nav h1 {
-  font-size: 3em;
-  font-family: 'Fira Sans', sans-serif;
-}*/
 nav h1 {
   color: #003200;
   font-size: 4em;
@@ -56,6 +52,7 @@ ul li {
   border: 1px solid black;
   padding: 1em;
   background-color: #DDDDDD;
+  text-align: center;
 }
 
 div img {
@@ -63,9 +60,9 @@ div img {
   width: 300px;
 }
 
-.fa {
-  padding-left: 60px;
+.memeFeedIcons {
   cursor: pointer;
+  padding: 0 20px;
 }
 
 /*Signup and Login Partials*/
@@ -105,7 +102,6 @@ header {
 
 .userTitles {
   text-align: center;
-  text-decoration: underline;
 }
 
 .containerUserPage{
@@ -120,11 +116,23 @@ header {
 .userMemeFeed, .savedMemes {
   display: flex;
   flex-direction: column;
+  padding: 1em;
+  background-color: #DDDDDD;
+}
+
+.userMemeImages {
+  align-self: center;
+  padding-bottom: 10px;
 }
 
 .userMemeLists {
-  align-self: center;
-  padding-bottom: 10px;
+  text-align: center;
+}
+
+.userIcons {
+  display: inline;
+  padding-left: 10px;
+  cursor: pointer;
 }
 
 /*createMeme partial*/
