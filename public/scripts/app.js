@@ -112,7 +112,7 @@ function MemeController($http, $state, $scope, $stateParams){
      console.log('response');
 
      getSavedMemes(currentUser);
-     
+
    });
    closeEditModal();
  }
@@ -122,10 +122,26 @@ function MemeController($http, $state, $scope, $stateParams){
    console.log(currentUser);
    console.log(meme);
 
-   $http.put(`/user/${currentUser}/meme/${meme._}`)
+   var isFav = null;
+   if (meme.favorite === false) {
+     isFav = true;
+     $('.userMemeLists > #fav').css('color', '#FFD452');
+   } else {
+     isFav = false;
+     $('.userMemeLists > #fav').css('color', '#F5F5F5');
+   }
+
+   var favMeme = {
+     name: meme.name,
+     category: meme.category,
+     favorite: isFav
+   }
+
+   $http.put(`/user/${currentUser}/meme/${meme._id}`, favMeme)
    .then(function(response) {
      console.log('response');
      console.log(response);
+     getSavedMemes(currentUser);
    });
  }
 
