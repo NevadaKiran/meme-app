@@ -40,7 +40,7 @@ function AuthController($http, $state, $scope, $rootScope){
       .then(function(response) {
         $scope.$emit('userLoggedIn', response.data.data);
         $rootScope.$emit('fetchData', response.data.data);
-        $state.go('user');
+        $state.go('user', {userId: response.data.data._id});
       });
   }
 
@@ -57,17 +57,11 @@ function AuthController($http, $state, $scope, $rootScope){
   self.login = login;
 }
 
-function MemeController($http, $state, $scope){
+function MemeController($http, $state, $scope, $stateParams){
   var self = this;
-  self.blankMemes = [];
-  self.memeUrl = '';
-  self.memeId = '';
-  self.memeName = '';
-  self.newMeme = {};
-  self.password = '';
-  self.username = '';
-  getBlankMemes();
 
+  getBlankMemes();
+  getSavedMemes($stateParams.userId);
 
  function showCreate(currentUser){
    $state.go('createMeme');
@@ -83,37 +77,11 @@ function MemeController($http, $state, $scope){
  function getSavedMemes(currentUser){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
-      console.log('getSavedMemes response');
-      console.log(response);
       self.savedMemes = [];
       self.savedMemes = response.data.currentUser.memeList;
-      console.log('this is self.savedMemes from getSaveMeme');
-      console.log(self.savedMemes);
     })
   }
 
- function saveMeme(newMeme, url, currentUser){
-   console.log(currentUser);
-
-   var newMemeInfo = {
-     name: newMeme.name,
-     category: newMeme.category,
-     text0: newMeme.text0,
-     text1: newMeme.text1,
-     userId: currentUser,
-     url: url
-   }
-
-   $http.post(`/user/${currentUser}/meme`, newMemeInfo).
-   then(function(response) {
-     console.log('this is save meme response');
-     console.log(response);
-     console.log('this is self.savedMemes from saveMeme');
-     console.log(self.savedMemes);
-     getSavedMemes(currentUser);
-
-   });
- }
   function createMeme(newMemeInfo, memeId, currentUser) {
 
     self.newMeme = {
@@ -122,34 +90,14 @@ function MemeController($http, $state, $scope){
      text0: newMemeInfo.topText,
      text1: newMemeInfo.bottomText,
      memeId: memeId,
-     currentUser: currentUser
+     userId: currentUser
     }
-    console.log(self.newMeme);
 
     $http.post(`/user/${currentUser}/meme/api`, self.newMeme)
     .then(function(response) {
-      console.log('response from backend');
-      console.log(response);
-      console.log('this is the url');
-      self.memeUrl = response.data.url;
-      console.log(self.memeUrl);
-
-      saveMeme(self.newMeme, self.memeUrl,  currentUser );
-
-
-    $(".modal-showNewMeme").children().css("display", "block");
-
-    $(".modal-body > form").css("display", "none");
-
-    $state.go('user');
-
+      $state.go('user', {userId: currentUser}, {reload: true});
     });
-
-    //  $(".modal-body").children().css("display", "none");
-     //
-    //  $(".modal-body").css("display", "block");
-
-}
+  }
 
  function editCreateMeme(){
 
@@ -168,14 +116,11 @@ function MemeController($http, $state, $scope){
    $("#modal").css("display", "none");
  }
 
-
-
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
  self.showCreateMemeModal = showCreateMemeModal;
  self.showCreate = showCreate;
  self.getBlankMemes = getBlankMemes;
- self.saveMeme = saveMeme;
  self.getSavedMemes = getSavedMemes;
 }
 
@@ -186,7 +131,7 @@ function RandomMemeController($http, $state) {
   self.shuffledMemesData =[];
 
     // USE THIS TO SHUFFLE YOUR ARRAYS
-
+    //Credits: code adapted from memory game lab WDIR General Assembly
      function shuffle() {
        $http.get('/memes')
        .then(function(response){
