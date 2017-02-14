@@ -59,6 +59,7 @@ router.put('/:id', function(req, res) {
 
       user.save();
       console.log(user);
+      console.log(user.memeList.id(req.params.id));
       res.json({ meme: user.memeList.id(req.params.id) });
     })
     .catch(function(err) {
