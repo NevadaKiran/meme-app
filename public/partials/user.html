@@ -18,7 +18,7 @@
         <i class="fa fa-heart userIcons iconSave"> Save</i>
         <i class="fa fa-star userIcons iconFavorite"> Favorite</i>
         <i class="fa fa-edit userIcons iconEdit"> Edit</i>
-        <i class="fa fa-remove userIcons iconDelete"> Delete</i>
+        <i ng-click="meme.deleteMeme(home.currentUser._id, memes._id)" class="fa fa-remove userIcons iconDelete"> Delete</i>
       </div>
     </div>
   </section>
