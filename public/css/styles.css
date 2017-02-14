@@ -89,7 +89,7 @@ ul li:hover {
 }
 
 .eachMeme {
-  padding: 1em;
+  margin: 1em 3.6em;
   background-color: #333333;
   text-align: center;
 }
