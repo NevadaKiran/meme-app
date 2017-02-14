@@ -9,38 +9,52 @@ var rp = require('request-promise');
 var http = require('http');
 
 router.get('/', function(req, res) {
-  User.findById({})
+  User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
       res.json({
-        user: user,
-        currentUser: req.session.currentUser
+        currentUser: user
       });
     });
-});
-
-router.post('/',function(req, res){
-
-  User.findById(req.body.userId)
-  .exec(function(err, user) {
-    if(err){console.log(err);}
-
-    var newMeme = new Meme(req.body);
-    user.memeList.push(newMeme);
-    user.save();
-    res.json({newMeme})
-  });
 });
 
 router.post('/api', function(req, res) {
   rp.post(`https://api.imgflip.com/caption_image?template_id=${req.body.memeId}&username=${process.env.IMG_FLIP_USERNAME}&password=${process.env.IMG_FLIP_PASSWORD}&text0=${req.body.text0}&text1=${req.body.text1}`)
   .then(function(data) {
 
-    res.json({url: JSON.parse(data).data.url});
-  });
+    User.findById(req.body.userId)
+    .exec(function(err, user) {
+      if(err){console.log(err);}
 
+      var newMeme = new Meme({
+        name: req.body.name,
+        category: req.body.category,
+        text0: req.body.text0,
+        text1: req.body.text1,
+        url: JSON.parse(data).data.url
+      });
+
+      user.memeList.push(newMeme);
+
+      user.save(function(err, data){
+        if(err) console.log(err);
+        res.json(newMeme);
+      });
+    });
+  });
 });
 
+router.delete('/:id', function(req, res){
 
+  User.findById(req.session.currentUser._id).exec()
+     .then(function(user){
+       user.memeList.id(req.params.id).remove();
+       user.save();
+       res.json({ user });
+     })
+     .catch(function(err) {
+       res.json(err)
+     })
+});
 
 module.exports = router;
