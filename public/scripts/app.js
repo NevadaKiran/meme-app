@@ -78,7 +78,19 @@ function MemeController($http, $state, $scope, $stateParams){
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
       self.savedMemes = [];
+      self.favoriteMemesArray = [];
       self.savedMemes = response.data.currentUser.memeList;
+      console.log(self.savedMemes.length);
+      console.log(self.savedMemes);
+
+      for (var i = 0; i < self.savedMemes.length; i++) {
+        if (self.savedMemes[i].favorite === true) {
+          // self.favoriteMemesArray[i] = self.savedMemes[i];
+          self.favoriteMemesArray.push(self.savedMemes[i]);
+          console.log(self.savedMemes[i].favorite);
+          console.log(self.favoriteMemesArray);
+        }
+      }
     })
   }
 
@@ -141,6 +153,7 @@ function MemeController($http, $state, $scope, $stateParams){
    .then(function(response) {
      console.log('response');
      console.log(response);
+     self.favoriteMemesArray = [];
      getSavedMemes(currentUser);
    });
  }

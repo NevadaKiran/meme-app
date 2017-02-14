@@ -9,16 +9,16 @@
   <div class="modalContent">
     <div class="modal-header">
       <span ng-click="meme.closeEditModal()" id="closeEdit" class="close">&times;</span>
-      <h2>Create a meme</h2>
+      <h2>Edit Your Meme</h2>
     </div>
     <div class="modal-body">
-      <p>{{meme.editMemeValue.name}}</p>
+      <h3>{{meme.editMemeValue.name}}</h3>
       <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.editMemeValue.name}}">
       <form ng-submit="meme.editMeme(home.currentUser._id)">
         <label for="">Name</label>
         <input type="text"  ng-model="meme.editMemeValue.name">
         <label for="">Category</label>
-        <input type="text"  ng-model="meme.editMemeValue.category">
+        <input type="text"  ng-model="meme.editMemeValue.category"><br>
         <button type="submit">Edit</button>
       </form>
     </div>
@@ -28,8 +28,14 @@
 <!-- ******************************************************** -->
 <section class="containerUserPage">
   <section class="leftUserPage">
-    <div class="favoriteMemes">
-      <h2 class="userTitles">Favorites</h2>
+    <h2 class="userTitles">Favorite Memes</h2>
+    <div class="favoriteMemes" ng-repeat="memes in meme.favoriteMemesArray track by $index">
+      <h4 class="userTitles">{{memes.name}}</h4>
+      <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
+      <div class="userMemeLists">
+        <i id="unFav" ng-click="meme.favoriteMeme(home.currentUser._id, memes)" class="fa fa-star userIcons iconFavorite"> Un-Favorite</i>
+      </div>
+      <h6 class="userTitles">Category: {{memes.category}}</h6>
     </div>
   </section>
 
