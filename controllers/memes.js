@@ -44,4 +44,17 @@ router.post('/api', function(req, res) {
   });
 });
 
+router.delete('/:id', function(req, res){
+
+  User.findById(req.session.currentUser._id).exec()
+     .then(function(user){
+       user.memeList.id(req.params.id).remove();
+       user.save();
+       res.json({ user });
+     })
+     .catch(function(err) {
+       res.json(err)
+     })
+});
+
 module.exports = router;
