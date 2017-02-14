@@ -2,12 +2,12 @@
 var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
 var Meme = require('../models/meme.js');
-
+var dotenv = require('dotenv').config();
 
 //all credit and documentation to this package can be found at https://github.com/seanemmer/mongoose-seed
 
 //mongoose-seed boiler plate
-seeder.connect('mongodb://localhost/meme-app', function(){
+seeder.connect(process.env.MONGODB_URI || 'mongodb://localhost/meme-app', function(){
   //load model
   seeder.loadModels(['./models/meme.js']);
 
@@ -239,7 +239,6 @@ var memeData = [
         category:"grumpy-cat",
         url:"http://bit.ly/2l7C5l2"
       },
-
       {
         name:"zoo",
         category:"grumpy-cat",
@@ -394,7 +393,243 @@ var memeData = [
         name:"red-light",
         category:"creepy-sloth",
         url:"http://bit.ly/2kjRG1b"
-      }
+      },
+      {
+  name:"still-fat",
+  category:"manatee",
+  url:"http://bit.ly/2l8PrgR"
+},
+{
+  name:"friends",
+  category:"manatee",
+  url:"http://bit.ly/2ldicbD"
+},
+{
+  name:"helmet",
+  category:"game-thrones",
+  url:"http://bit.ly/2kMvqeI"
+},
+{
+  name:"security-password",
+  category:"programmer",
+  url:"http://bit.ly/2lJd4dj"
+},
+{
+  name:"valentines-day",
+  category:"office",
+  url:"http://bit.ly/2lIAApI"
+},
+{
+  name:"bender",
+  category:"laughing, futurama",
+  url:"http://bit.ly/1jOQGL2"
+},
+{
+  name:"i'm-dead",
+  category:"laughing",
+  url:"http://bit.ly/2lDGP2o"
+},
+{
+  name:"despicable",
+  category:"laughing",
+  url:"http://m.memegen.com/s4iubx.jpg"
+},
+{
+  name:"putin-dog",
+  category:"dog",
+  url:"http://bit.ly/1CB8AdP"
+},
+{
+  name:"tire-change",
+  category:"like-boss",
+  url:"http://bit.ly/2kMbwAS"
+},
+{
+  name:"bird-rebel",
+  category:"like-boss",
+  url:"http://bit.ly/2lIeYdl"
+},
+{
+  name:"military-tire-change",
+  category:"like-boss",
+  url:"http://bit.ly/2l8yHX2"
+},
+{
+  name:"cat-strut",
+  category:"like-boss",
+  url:"http://bit.ly/2l8JXTd"
+},
+{
+  name:"shark-facepalm",
+  category:"like-boss",
+  url:"http://bit.ly/2lJ4Jq1"
+},
+{
+  name:"shark-week",
+  category:"like-boss",
+  url:"http://bit.ly/2klcuFz"
+},
+{
+  name:"day-off",
+  category:"superheroes, batman",
+  url:"http://bit.ly/2lIshKN"
+},
+{
+  name:"friend-zone",
+  category:"superheroes",
+  url:"http://bit.ly/2kMvUlj"
+},
+{
+  name:"superhero-mom",
+  category:"superheroes",
+  url:"https://i.imgflip.com/16wl61.jpg"
+},
+{
+  name:"knock-knock",
+  category:"superheroes",
+  url:"http://bit.ly/2kDPYUg"
+},
+{
+  name:"bvs",
+  category:"superheroes",
+  url:"http://bit.ly/2kMk7n4"
+},
+{
+  name:"cia-dinosaurs",
+  category:"conspiracy",
+  url:"http://bit.ly/2l1pXiU"
+},
+{
+  name:"plotting-kid",
+  category:"conspiracy",
+  url:"http://m.memegen.com/4W4PPR.jpg"
+},
+{
+  name:"facts",
+  category:"conspiracy",
+  url:"http://bit.ly/2l1rWni"
+},
+{
+  name:"meme-science",
+  category:"conspiracy",
+  url:"http://bit.ly/2kDUEJT"
+},
+{
+  name:"alternate-universe",
+  category:"conspiracy",
+  url:"http://bit.ly/2lIevYq"
+},
+{
+  name:"liam-neeson",
+  category:"like-boss",
+  url:"http://bit.ly/2kl5JUf"
+},
+{
+  name:"portrait",
+  category:"like-boss, spiderman, superhero",
+  url:"http://bit.ly/2kEisgZ"
+},
+{
+  name:"fierce-turtle",
+  category:"cute",
+  url:"http://bit.ly/2lJXlut"
+},
+{
+  name:"feelings",
+  category:"cute, dog",
+  url:"https://i.imgflip.com/nt9gv.jpg"
+},
+{
+  name:"pee",
+  category:"cute",
+  url:"http://bit.ly/2ldIcDO"
+},
+{
+  name:"interprative-dance",
+  category:"cute",
+  url:"http://bit.ly/2kqPVKw"
+},
+{
+  name:"details",
+  category:"cute",
+  url:"https://i.imgflip.com/5totb.jpg"
+},
+{
+  name:"otters",
+  category:"cute",
+  url:"http://bit.ly/2lIVsNY"
+},
+{
+  name:"save-yourself",
+  category:"cute",
+  url:"http://bit.ly/2kNdEby"
+},
+{
+  name:"relevant",
+  category:"cute, cat",
+  url:"http://bit.ly/2l2fvaR"
+},
+{
+  name:"haha-no",
+  category:"cute, cat",
+  url:"http://bit.ly/2lJ5PB6"
+},
+{
+  name:"this-much",
+  category:"cute, tyrannousaurus-rex",
+  url:"http://bit.ly/2lK6FOY"
+},
+{
+  name:"small-arms",
+  category:"tyrannousaurus-rex",
+  url:"http://bit.ly/16GOfql"
+},
+{
+  name:"darwin",
+  category:"tyrannousaurus-rex",
+  url:"http://bit.ly/2lJecgg"
+},
+{
+  name:"bed-making",
+  category:"tyrannousaurus-rex",
+  url:"http://bit.ly/2lJ72IE"
+},
+{
+  name:"arm wrestle",
+  category:"tyrannousaurus-rex",
+  url:"http://bit.ly/2l29efi"
+},
+{
+  name:"working-code",
+  category:"programmer",
+  url:"http://bit.ly/24trKeU"
+},
+{
+  name:"javascript",
+  category:"programmer",
+  url:"http://bit.ly/2kl9sBj"
+},
+{
+  name:"programmer-love",
+  category:"programmer",
+  url:"http://bit.ly/2kl4t3j"
+},
+{
+  name:"no-sleep",
+  category:"programmer",
+  url:"http://bit.ly/2lK9waE"
+},
+{
+  name:"push-anyways",
+  category:"programmer",
+  url:"http://bit.ly/2l9yzXg"
+},
+{
+  name:"bear-conspiracy",
+  category:"conspiracy",
+  url:"http://bit.ly/2lJjdWO"
+}
+
     ]
   }
 ];
