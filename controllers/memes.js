@@ -45,10 +45,6 @@ router.post('/api', function(req, res) {
 });
 
 router.delete('/:id', function(req, res){
-  // User.findById(req.)
-  console.log("hit backend delete route");
-  console.log(req.params.id);
-  console.log(req.session.currentUser._id);
 
   User.findById(req.session.currentUser._id).exec()
      .then(function(user){
