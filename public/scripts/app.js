@@ -116,6 +116,18 @@ function MemeController($http, $state, $scope, $stateParams){
    $("#modal").css("display", "none");
  }
 
+ function deleteMeme(currentUser, memeId){
+   console.log("hit deleteMeme function");
+   console.log(currentUser);
+   console.log(meme);
+
+ // $http.delete(`users/${currentUser}/memes/${memeId}`)
+ // .then(function(response){
+ //   console.log(response);
+ // });
+ }
+
+ self.deleteMeme = deleteMeme;
  self.createMeme = createMeme;
  self.closeCreateMemeModal = closeCreateMemeModal;
  self.showCreateMemeModal = showCreateMemeModal;
