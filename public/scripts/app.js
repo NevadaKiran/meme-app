@@ -118,6 +118,7 @@ function MemeController($http, $state, $scope, $stateParams){
    $http.put(`/user/${currentUser}/meme/${meme._id}`)
    .then(function(response) {
      console.log('response');
+     console.log(response);
    });
  }
 
