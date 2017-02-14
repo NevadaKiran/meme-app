@@ -39,6 +39,6 @@ app.use('/user/:id/meme', memesController);
 app.use('/sessions', sessionsController);
 
 // LISTENERS
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Listening to 3000");
 });
