@@ -19,7 +19,6 @@
         <p>{{meme.memeName}}</p>
         <img ng-src="{{meme.memeUrl}}" alt="{{meme.memeName}}">
         <form ng-submit="meme.createMeme(newMeme, meme.memeId, home.currentUser._id)">
-          <!-- <label for="">Edit meme</label> -->
           <input type="text" ng-model="newMeme.name" placeholder="name">
           <input type="text" ng-model="newMeme.topText" placeholder="top text">
           <input type="text" ng-model="newMeme.bottomText" placeholder="Bottom text">
