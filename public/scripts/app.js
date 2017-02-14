@@ -119,13 +119,15 @@ function MemeController($http, $state, $scope, $stateParams){
  function deleteMeme(currentUser, memeId){
    console.log("hit deleteMeme function");
    console.log(currentUser);
-   console.log(meme);
-
- // $http.delete(`users/${currentUser}/memes/${memeId}`)
- // .then(function(response){
- //   console.log(response);
- // });
+   console.log(memeId);
+ $http.delete(`/user/${currentUser}/meme/${memeId}`)
+ .then(function(response){
+   console.log(response);
+   console.log(response.data.user.memeList);
+   getSavedMemes(currentUser);
+  })
  }
+
 
  self.deleteMeme = deleteMeme;
  self.createMeme = createMeme;
