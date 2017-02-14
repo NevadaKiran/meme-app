@@ -12,13 +12,13 @@
       <h2>Create a meme</h2>
     </div>
     <div class="modal-body">
-      <p>{{meme.memeName}}</p>
-      <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.memeName}}">
-      <form ng-submit="meme.editMeme(update, meme.editMemeValue._id, home.currentUser._id)">
+      <p>{{meme.editMemeValue.name}}</p>
+      <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.editMemeValue.name}}">
+      <form ng-submit="meme.editMeme(home.currentUser._id)">
         <label for="">Name</label>
-        <input type="text"  ng-model="update.name" value="{{meme.editMemeValue.name}}">
+        <input type="text"  ng-model="meme.editMemeValue.name">
         <label for="">Category</label>
-        <input type="text"  ng-model="update.category" value="{{meme.editMemeValue.category}}">
+        <input type="text"  ng-model="meme.editMemeValue.category">
         <button type="submit">Edit</button>
       </form>
     </div>
