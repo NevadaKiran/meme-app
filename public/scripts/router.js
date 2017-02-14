@@ -24,7 +24,8 @@ function MemeRouter($stateProvider, $urlRouterProvider){
   .state('user', {
     url: '/user',
     templateUrl: '/partials/user.html',
-    controller: 'MemeController as meme'
+    controller: 'MemeController as meme',
+    params: {userId: null}
   })
   .state('createMeme', {
     url: '/user/:id/meme',
