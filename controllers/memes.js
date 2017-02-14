@@ -9,27 +9,13 @@ var rp = require('request-promise');
 var http = require('http');
 
 router.get('/', function(req, res) {
-  User.findById({})
+  User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
       res.json({
-        user: user,
-        currentUser: req.session.currentUser
+        currentUser: user
       });
     });
-});
-
-router.post('/',function(req, res){
-
-  User.findById(req.body.userId)
-  .exec(function(err, user) {
-    if(err){console.log(err);}
-
-    var newMeme = new Meme(req.body);
-    user.memeList.push(newMeme);
-    user.save();
-    res.json({newMeme})
-  });
 });
 
 router.post('/api', function(req, res) {
@@ -47,24 +33,15 @@ router.post('/api', function(req, res) {
         text1: req.body.text1,
         url: JSON.parse(data).data.url
       });
+
       user.memeList.push(newMeme);
+
       user.save(function(err, data){
         if(err) console.log(err);
-        console.log("***this is user.meme list**");
-        console.log(user.memeList);
-        console.log(newMeme);
-
         res.json(newMeme);
-
       });
-
     });
-
-
   });
-
 });
-
-
 
 module.exports = router;
