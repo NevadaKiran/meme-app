@@ -15,6 +15,7 @@ nav h1 {
   font-size: 4em;
   font-family: Georgia, Serif;
   width: 490px;
+  cursor: pointer;
 }
 
 ul {
@@ -26,6 +27,7 @@ ul li {
   display: inline;
   float: left;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 /*Home Partial*/
@@ -52,16 +54,18 @@ ul li {
 
 .eachMeme {
   border: 1px solid black;
+  padding: 1em;
+  background-color: #DDDDDD;
 }
 
 div img {
   height: 300px;
   width: 300px;
-  padding: 0 5px;
 }
 
 .fa {
-  padding-left: 50px;
+  padding-left: 60px;
+  cursor: pointer;
 }
 
 /*Signup and Login Partials*/
