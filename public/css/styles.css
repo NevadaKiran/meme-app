@@ -5,6 +5,20 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/*Font Awesome Icons*/
+.memeFeedIcons {
+  cursor: pointer;
+  padding: 0 20px;
+  color: black;
+}
+
+.userIcons {
+  display: inline;
+  padding-left: 10px;
+  cursor: pointer;
+  color: black;
+}
+
 /*Nav Bar*/
 nav h1 {
   color: #003200;
@@ -61,11 +75,6 @@ div img {
   width: 300px;
 }
 
-.memeFeedIcons {
-  cursor: pointer;
-  padding: 0 20px;
-}
-
 /*Signup and Login Partials*/
 .signUp, .login {
   text-align: center;
@@ -111,7 +120,6 @@ header {
 }
 
 .leftUserPage, .rightUserPage, .middleUserPage {
-  border: 2px solid black;
   flex-grow: 1;
 }
 
@@ -120,6 +128,8 @@ header {
   flex-direction: column;
   padding: 1em;
   background-color: #DDDDDD;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .userMemeImages {
@@ -129,12 +139,6 @@ header {
 
 .userMemeLists {
   text-align: center;
-}
-
-.userIcons {
-  display: inline;
-  padding-left: 10px;
-  cursor: pointer;
 }
 
 /*createMeme partial*/
