@@ -36,26 +36,27 @@
   <section class="middleUserPage">
     <h2 class="userTitles">Saved Memes</h2>
     <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
-      <h4>{{memes.name}}</h4>
-      <h6>category: {{memes.category}}</h6>
+      <h4 class="userTitles">{{memes.name}}</h4>
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
-        <i class="fa fa-heart userIcons iconSave"> Save</i>
         <i id="fav" ng-click="meme.favoriteMeme(home.currentUser._id, memes)" class="fa fa-star userIcons iconFavorite"> Favorite</i>
         <i ng-click="meme.showEditModal(memes)" class="fa fa-edit userIcons iconEdit"> Edit</i>
         <i ng-click="meme.deleteMeme(home.currentUser._id, memes._id)" class="fa fa-remove userIcons iconDelete"> Delete</i>
       </div>
+      <h6 class="userTitles">Category: {{memes.category}}</h6>
     </div>
   </section>
 
   <section class="rightUserPage" ng-controller="RandomMemeController as rand">
     <h2 class="userTitles">Meme Feed</h2>
     <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10">
+      <h4 class="userTitles">{{meme.name}}</h4>
       <img class="userMemeImages" ng-src="{{meme.url}}" alt="{{meme.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart memeFeedIcons iconSave"> Save</i>
         <i class="fa fa-star memeFeedIcons iconFavorite"> Favorite</i>
       </div>
+      <h6 class="userTitles">Category: {{meme.category}}</h6>
     </div>
   </section>
 </section>
