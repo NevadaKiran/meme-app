@@ -44,6 +44,29 @@ router.post('/api', function(req, res) {
   });
 });
 
+router.put('/:id', function(req, res) {
+  console.log('hit backend put route');
+  console.log(req.body);
+  User.findById(req.session.currentUser._id).exec()
+    .then(function(user) {
+      console.log('Checking Meme List Id');
+      console.log(user.memeList.id)
+      var meme = user.memeList.id(req.params.id);
+
+      meme.name = req.body.name;
+      meme.category = req.body.category;
+      meme.favorite = req.body.favorite;
+
+      user.save();
+      console.log(user);
+      console.log(user.memeList.id(req.params.id));
+      res.json({ meme: user.memeList.id(req.params.id) });
+    })
+    .catch(function(err) {
+      res.json(err)
+    })
+});
+
 router.delete('/:id', function(req, res){
 
   User.findById(req.session.currentUser._id).exec()
