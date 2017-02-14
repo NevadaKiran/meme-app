@@ -46,10 +46,11 @@ ul li {
 .homeMemes {
   display: flex;
   flex-wrap: wrap;
+  margin-left: auto;
+  justify-content: center;
 }
 
 .eachMeme {
-  border: 1px solid black;
   padding: 1em;
   background-color: #DDDDDD;
   text-align: center;
@@ -93,6 +94,7 @@ button {
 
 .signUpMemes, .loginMemes {
   display: inline-flex;
+  padding: 1em;
 }
 
 /*User Partial*/
