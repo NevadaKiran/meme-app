@@ -9,6 +9,6 @@
 <div class="homeMemes">
   <div class="eachMeme" ng-repeat="meme in rand.shuffledMemesData | filter: searchBar">
     <img ng-src="{{meme.url}}" alt="{{meme.name}}"><br>
-    <i class="fa fa-heart memeFeedIcons" ui-sref="signup"> Save</i><i class="fa fa-star memeFeedIcons" ui-sref="login"> Favorite</i>
+    <i class="fa fa-heart memeFeedIcons iconSave" ui-sref="signup"> Save</i><i class="fa fa-star memeFeedIcons iconFavorite" ui-sref="login"> Favorite</i>
   </div>
 </div>

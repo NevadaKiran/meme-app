@@ -1,7 +1,7 @@
 /*General Styling*/
 body {
-  background-color: #d3d9de;
-  color: #2c4f6e;
+  background-color: #333333;
+  color: #F5F5F5;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,23 +9,43 @@ body {
 .memeFeedIcons {
   cursor: pointer;
   padding: 0 20px;
-  color: black;
+  color: #F5F5F5;
 }
 
 .userIcons {
   display: inline;
   padding-left: 10px;
   cursor: pointer;
-  color: black;
+  color: white;
+}
+
+.iconSave:hover {
+  color: #E05151;
+}
+
+.iconFavorite:hover {
+  color: #FFD452;
+}
+
+.iconEdit:hover {
+  color: #75A3D1;
+}
+
+.iconDelete:hover {
+  color: #D4911E;
 }
 
 /*Nav Bar*/
 nav h1 {
-  color: #003200;
+  color: #F5F5F5;
   font-size: 4em;
   font-family: Georgia, Serif;
   width: 490px;
   cursor: pointer;
+}
+
+nav h1:hover {
+  color: #1FDA9A;
 }
 
 ul {
@@ -66,7 +86,7 @@ ul li {
 
 .eachMeme {
   padding: 1em;
-  background-color: #DDDDDD;
+  background-color: #333333;
   text-align: center;
 }
 
@@ -127,7 +147,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 1em;
-  background-color: #DDDDDD;
+  background-color: #333333;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }

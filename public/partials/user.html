@@ -15,10 +15,10 @@
     <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
-        <i class="fa fa-heart userIcons"> Save</i>
-        <i class="fa fa-star userIcons"> Favorite</i>
-        <i class="fa fa-edit userIcons"> Edit</i>
-        <i class="fa fa-remove userIcons"> Delete</i>
+        <i class="fa fa-heart userIcons iconSave"> Save</i>
+        <i class="fa fa-star userIcons iconFavorite"> Favorite</i>
+        <i class="fa fa-edit userIcons iconEdit"> Edit</i>
+        <i class="fa fa-remove userIcons iconDelete"> Delete</i>
       </div>
     </div>
   </section>
@@ -28,8 +28,8 @@
     <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10">
       <img class="userMemeImages" ng-src="{{meme.url}}" alt="{{meme.name}}">
       <div class="userMemeLists">
-        <i class="fa fa-heart memeFeedIcons"> Save</i>
-        <i class="fa fa-star memeFeedIcons"> Favorite</i>
+        <i class="fa fa-heart memeFeedIcons iconSave"> Save</i>
+        <i class="fa fa-star memeFeedIcons iconFavorite"> Favorite</i>
       </div>
     </div>
   </section>
