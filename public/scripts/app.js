@@ -99,10 +99,13 @@ function MemeController($http, $state, $scope, $stateParams){
     });
   }
 
- function editMeme(currentUser, meme){
+ function editMeme(update, memeId, userId){
    console.log('hit editCreateMeme');
-   console.log(currentUser);
-   console.log(meme);
+   console.log(update);
+   console.log(memeId);
+   console.log(userId);
+
+  //  showEditModal(meme);
 
   //  $http.put(`/user/${currentUser}/meme/${memeId}`, )
   //  .then(function(response) {
@@ -115,11 +118,22 @@ function MemeController($http, $state, $scope, $stateParams){
    console.log(currentUser);
    console.log(meme);
 
-   $http.put(`/user/${currentUser}/meme/${meme._id}`)
+   $http.put(`/user/${currentUser}/meme/${meme._}`)
    .then(function(response) {
      console.log('response');
    });
  }
+
+  function showEditModal (meme){
+    $(".editMemeModal").css("display", "block");
+    console.log(meme);
+
+    self.editMemeValue = meme;
+  }
+
+  function closeEditModal (){
+    $("#editModal").css("display", "none");
+  }
 
  function showCreateMemeModal(meme){
    $(".modal-showNewMeme").children().css("display", "none");
@@ -140,6 +154,8 @@ function MemeController($http, $state, $scope, $stateParams){
    getSavedMemes(currentUser);
   })
  }
+ self.closeEditModal = closeEditModal;
+ self.showEditModal= showEditModal;
  self.favoriteMeme = favoriteMeme;
  self.editMeme = editMeme;
  self.deleteMeme = deleteMeme;
