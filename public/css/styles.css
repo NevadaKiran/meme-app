@@ -20,7 +20,7 @@ body {
 }
 
 .iconSave:hover {
-  color: #E05151;
+  color: #EB65A0;
 }
 
 .iconFavorite:hover {
@@ -195,7 +195,7 @@ header h3:hover {
   padding: 1em;
 }
 .blankMemes:hover {
-  background-color: #39CCCC;
+  background-color: #1FDA9A;
 }
 .modal-body {
   display: flex;
@@ -285,7 +285,7 @@ header h3:hover {
 
 .modalContent {
   position: relative;
-      background-color: #fefefe;
+      background-color: #333333;
       margin: auto;
       padding: 0;
       border: 1px solid #888;
@@ -322,8 +322,8 @@ header h3:hover {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #39CCCC;
-    color: white;
+    background-color: #1FDA9A;
+    color: #333333;
 }
 
 .modal-body {padding: 2px 16px;}
