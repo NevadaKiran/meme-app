@@ -10,8 +10,8 @@
   <div class="eachMeme" ng-repeat="meme in rand.shuffledMemesData | filter: searchBar">
     <h4 class="memeTitles">{{meme.name}}</h4>
     <img ng-src="{{meme.url}}" alt="{{meme.name}}"><br>
-    <div class="">
-      <i class="fa fa-heart memeFeedIcons iconSave" ui-sref="signup"> Save</i><i class="fa fa-star memeFeedIcons iconFavorite" ui-sref="login"> Favorite</i>
+    <div ng-if="home.currentUser">
+      <i ng-click="rand.saveFeedMeme(meme, home.currentUser._id)"  class="fa fa-heart memeFeedIcons iconSave"> Save</i><i class="fa fa-star memeFeedIcons iconFavorite" ui-sref="login"> Favorite</i>
     </div>
     <h6 class="memeTitles">Category: {{meme.category}}</h6>
   </div>
