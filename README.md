@@ -72,6 +72,8 @@ Memes
 - favorite
 - category
 - url
+- text0
+- text1
 - created_at
 - updated_at
 
@@ -110,6 +112,8 @@ var exampleUser = {
       name: 'Grumpy Cat',
       favorite: true,
       category: 'Cats',
+      text0: 'Grumble Grumble',
+      text1: 'I iz Grumpy',
       url: 'http://www.getcrumpycathere.com'
       created_at: `2017-02-06T15:51:53.072Z`,
       updated_at: `2017-02-07T15:51:53.072Z`
@@ -118,6 +122,8 @@ var exampleUser = {
         name: 'Doge',
         favorite: false,
         category: 'dogs',
+        text0: 'Much dogs',
+        text1: 'Are Awesome',
         url: 'http://www.itsadoge.com'
         created_at: `2017-02-07T15:51:53.072Z`,
         updated_at: `2017-02-08T15:51:53.072Z`
