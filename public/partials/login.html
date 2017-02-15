@@ -1,5 +1,14 @@
 <div class="login" ng-controller="RandomMemeController as rand">
   <h1>Login</h1>
+  <!-- *********** Error display ************ -->
+    <section class="errMsgContainer">
+      <div class="errMsg">
+        <h4>Incorrect username or password.</h4>
+      </div>
+    </section>
+
+
+  <!-- ************************************* -->
   <form ng-submit="auth.login(userInfo)">
     <div>
       <input type="text" ng-model="userInfo.username" placeholder="username">
