@@ -130,6 +130,18 @@ button {
   padding: 1em;
 }
 
+#notUser {
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+  margin: auto;
+  width: 95px;
+}
+
+#notUser:hover {
+  color: #1FDA9A;
+}
+
 /*User Partial*/
 header {
   text-align: center;

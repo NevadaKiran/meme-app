@@ -11,7 +11,7 @@
     <h4 class="memeTitles">{{meme.name}}</h4>
     <img ng-src="{{meme.url}}" alt="{{meme.name}}"><br>
     <div ng-if="home.currentUser">
-      <i ng-click="rand.saveFeedMeme(meme, home.currentUser._id)"  class="fa fa-heart memeFeedIcons iconSave"> Save</i><i class="fa fa-star memeFeedIcons iconFavorite" ui-sref="login"> Favorite</i>
+      <i ng-click="rand.saveFeedMeme(meme, home.currentUser._id)"  class="fa fa-heart memeFeedIcons iconSave"> Save</i>
     </div>
     <h6 class="memeTitles">Category: {{meme.category}}</h6>
   </div>
