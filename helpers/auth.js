@@ -29,18 +29,19 @@ function loginUser(req, res, next) {
 }
 
 function authorize(req, res, next) {
-  var currentUser = req.session.currentUser
+  var currentUser = req.session.currentUser;
 
   // THIS ASSUMES THAT EVERY :id refers to the user _id
   // needs to check if the current user doesn't exist, if it does then make
   // sure that the id of the logged in user and the id of the route match
   if (!currentUser || currentUser._id !== req.params.id ) {
+    res.json({status: 401, data: 'unauthorized'});
     // customize
     // res.render('errors/401.hbs')
     // res.redirect('/users')
-    res.send({status: 401})
+    // res.send({status: 401})
   } else {
-    next()
+    next();
   }
 };
 
