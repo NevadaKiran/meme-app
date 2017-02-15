@@ -502,7 +502,7 @@ var memeData = [
 {
   name:"Rebel Dog",
   category:"Like a Boss, Anarchy, Dog",
-  url:"http://bit.ly/2lh2tZ4"
+  url:"http://i.imgur.com/hmz1dtc.jpg"
 },
 {
   name:"Anarchy Cat",
