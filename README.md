@@ -223,7 +223,9 @@ request-promise
 - Add a user option to choose a display layout for top 10 memes
 
 ## Project Challenges
-Our first challenge that we spent some time solving came from the save/post route of our meme creation. We were able to create our save function that stored user created memes into the appropriate user object on our backend server. When we looked to call those memes and display them on the front-end, we were unable to have those memes displayed on the user page once the redirect between states completed.
+1) Our first challenge came from the save/post route when implementing the meme create component of the app. We were successful in saving created memes into the appropriate user object on our backend server, however when we had difficulty displaying those saved memes on the front-end. Once the redirect completed, the meme was saved in the object but failed to render unless we logged out and in of the user that created the meme.
+
+W
 
 
 that we encountered came from the authentication portion of our
