@@ -715,6 +715,11 @@ var memeData = [
   url:"http://bit.ly/2l9yzXg"
 },
 {
+  name:"Movie conditions",
+  category:"Bear",
+  url:"http://bit.ly/2lIvf5Y"
+},
+{
   name:"Polar Conspiracy",
   category:"Conspiracy, Bear, Animals, Cute",
   url:"http://bit.ly/2lJjdWO"
