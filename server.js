@@ -13,6 +13,8 @@ var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 var randomMemeController = require('./controllers/randomMemeController.js');
 
+
+
 var app = express();
 
 //------------------------------
@@ -28,7 +30,7 @@ app.use(morgan('dev'));
 
 app.use(session({
   secret: "solange",
-  resave: true,
+  resave: false,
   maxAge: 20 * 60 * 1000,
   saveUninitialized: false
 }));
