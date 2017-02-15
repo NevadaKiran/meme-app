@@ -19,7 +19,6 @@ function HomeController($scope, $http){
     self.currentUser = null;
   })
 
-  // $broadcast('currentUser', self.currentUser);
 }
 
 function AuthController($http, $state, $scope, $rootScope){
@@ -38,9 +37,15 @@ function AuthController($http, $state, $scope, $rootScope){
   function login(userInfo) {
     $http.post('/sessions/login', userInfo)
       .then(function(response) {
-        $scope.$emit('userLoggedIn', response.data.data);
-        $rootScope.$emit('fetchData', response.data.data);
-        $state.go('user', {userId: response.data.data._id});
+        if(response.data.data == "unauthorized"){
+          showErrMsg(false);
+          $state.go('login');
+        }else{
+          showErrMsg(true);
+          $scope.$emit('userLoggedIn', response.data.data);
+          $rootScope.$emit('fetchData', response.data.data);
+          $state.go('user', {userId: response.data.data._id});
+        }
       });
   }
 
@@ -52,6 +57,16 @@ function AuthController($http, $state, $scope, $rootScope){
       });
   }
 
+  function showErrMsg(valid){
+    if(!valid){
+      $(".errMsgContainer").css("display", "block");
+    } else{
+      $(".errMsgContainer").css("display", "none");
+    }
+
+  }
+
+  self.showErrMsg = showErrMsg;
   self.logout = logout;
   self.signup = signup;
   self.login = login;
@@ -75,20 +90,17 @@ function MemeController($http, $state, $scope, $stateParams){
  }
 
  function getSavedMemes(currentUser){
+   console.log(currentUser);
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
       self.savedMemes = [];
       self.favoriteMemesArray = [];
       self.savedMemes = response.data.currentUser.memeList;
-      console.log(self.savedMemes.length);
-      console.log(self.savedMemes);
 
       for (var i = 0; i < self.savedMemes.length; i++) {
         if (self.savedMemes[i].favorite === true) {
           // self.favoriteMemesArray[i] = self.savedMemes[i];
           self.favoriteMemesArray.push(self.savedMemes[i]);
-          console.log(self.savedMemes[i].favorite);
-          console.log(self.favoriteMemesArray);
         }
       }
     })
