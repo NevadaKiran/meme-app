@@ -1,7 +1,11 @@
 <header>
-  <h1>{{home.currentUser.username}}'s Memes</h1>
-  <h3 ng-click="meme.showCreate(home.currentUser)">Create A Meme!</h3>
+  <h1>Welcome {{home.currentUser.username}}</h1>
+  <form>
+    <input id="userSearch" type="text" placeholder="Search Your Memes" ng-model="searchBar">
+  </form>
 </header>
+<br>
+<br>
 
 <!-- *************** modal  *********************** -->
 <!-- setup credit to ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp -->
@@ -9,16 +13,16 @@
   <div class="modalContent">
     <div class="modal-header">
       <span ng-click="meme.closeEditModal()" id="closeEdit" class="close">&times;</span>
-      <h2>Create a meme</h2>
+      <h2>Edit Your Meme</h2>
     </div>
     <div class="modal-body">
-      <p>{{meme.editMemeValue.name}}</p>
+      <h3 class="modalTitle">{{meme.editMemeValue.name}}</h3>
       <img ng-src="{{meme.editMemeValue.url}}" alt="{{meme.editMemeValue.name}}">
       <form ng-submit="meme.editMeme(home.currentUser._id)">
         <label for="">Name</label>
         <input type="text"  ng-model="meme.editMemeValue.name">
         <label for="">Category</label>
-        <input type="text"  ng-model="meme.editMemeValue.category">
+        <input type="text"  ng-model="meme.editMemeValue.category"><br>
         <button type="submit">Edit</button>
       </form>
     </div>
@@ -28,14 +32,20 @@
 <!-- ******************************************************** -->
 <section class="containerUserPage">
   <section class="leftUserPage">
-    <div class="favoriteMemes">
-      <h2 class="userTitles">Favorites</h2>
+    <h2 class="userTitles">Favorite Memes</h2>
+    <div class="favoriteMemes" ng-repeat="memes in meme.favoriteMemesArray track by $index | filter: searchBar">
+      <h4 class="userTitles">{{memes.name}}</h4>
+      <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
+      <div class="userMemeLists">
+        <i id="unFav" ng-click="meme.favoriteMeme(home.currentUser._id, memes)" class="fa fa-star userIcons iconFavorite"> Un-Favorite</i>
+      </div>
+      <h6 class="userTitles">Category: {{memes.category}}</h6>
     </div>
   </section>
 
   <section class="middleUserPage">
     <h2 class="userTitles">Saved Memes</h2>
-    <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
+    <div class="savedMemes" ng-repeat="memes in meme.savedMemes | orderBy: '-' | filter: searchBar">
       <h4 class="userTitles">{{memes.name}}</h4>
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
@@ -49,14 +59,14 @@
 
   <section class="rightUserPage" ng-controller="RandomMemeController as rand">
     <h2 class="userTitles">Meme Feed</h2>
-    <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10">
-      <h4 class="userTitles">{{meme.name}}</h4>
+    <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10 | filter: searchBar">
+      <h4 class="memeTitles">{{meme.name}}</h4>
       <img class="userMemeImages" ng-src="{{meme.url}}" alt="{{meme.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart memeFeedIcons iconSave"> Save</i>
         <i class="fa fa-star memeFeedIcons iconFavorite"> Favorite</i>
       </div>
-      <h6 class="userTitles">Category: {{meme.category}}</h6>
+      <h6 class="memeTitles">Category: {{meme.category}}</h6>
     </div>
   </section>
 </section>

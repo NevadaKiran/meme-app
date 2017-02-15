@@ -20,7 +20,7 @@ body {
 }
 
 .iconSave:hover {
-  color: #E05151;
+  color: #EB65A0;
 }
 
 .iconFavorite:hover {
@@ -70,7 +70,7 @@ ul li:hover {
   text-align: center;
 }
 
-#mainSearch {
+#mainSearch, #userSearch {
   width: 300px;
   height: 30px;
   font-size: 15px;
@@ -135,12 +135,7 @@ header {
   text-align: center;
 }
 
-header h3:hover {
-  color: #1FDA9A;
-  cursor: pointer;
-}
-
-.userTitles {
+.userTitles, .memeTitles {
   text-align: center;
 }
 
@@ -150,15 +145,15 @@ header h3:hover {
 
 .leftUserPage, .rightUserPage, .middleUserPage {
   flex-grow: 1;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
-.userMemeFeed, .savedMemes {
+.userMemeFeed, .savedMemes, .favoriteMemes {
   display: flex;
   flex-direction: column;
   padding: 1em;
   background-color: #333333;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
 }
 
 .userMemeImages {
@@ -178,12 +173,20 @@ header h3:hover {
   justify-content: space-around;
 }
 .searchBarCreateMeme {
-  margin: 2em  auto;
+  margin: 2em auto;
+  text-align: center;
 }
 .searchBarCreateMeme > form {
   margin: auto;
   text-align: center;
 }
+
+#createSearch {
+  width: 300px;
+  height: 30px;
+  font-size: 15px;
+}
+
 .createMemeContainer > h2 {
   text-align: left;
 }
@@ -192,16 +195,20 @@ header h3:hover {
 }
 
 .blankMemes {
-  padding: 1em;
+  padding: 1em 3.6em;
 }
 .blankMemes:hover {
-  background-color: #39CCCC;
+  background-color: #1FDA9A;
 }
 .modal-body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-bottom: 3em;
+}
+
+.modalTitle {
+  text-align: center;
 }
 
 .modal-body img {
@@ -285,7 +292,7 @@ header h3:hover {
 
 .modalContent {
   position: relative;
-      background-color: #fefefe;
+      background-color: #333333;
       margin: auto;
       padding: 0;
       border: 1px solid #888;
@@ -295,6 +302,13 @@ header h3:hover {
       -webkit-animation-duration: 0.4s;
       animation-name: animatetop;
       animation-duration: 0.4s;
+}
+
+@media only screen and (max-height: 700px) {
+  .createMemeModal, .editMemeModal {
+    padding-top: 12px;
+  }
+
 }
 
 @-webkit-keyframes animatetop {
@@ -322,8 +336,8 @@ header h3:hover {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #39CCCC;
-    color: white;
+    background-color: #1FDA9A;
+    color: #333333;
 }
 
 .modal-body {padding: 2px 16px;}
