@@ -1,5 +1,14 @@
 <div class="login" ng-controller="RandomMemeController as rand">
   <h1>Login</h1>
+  <!-- *********** Error display ************ -->
+    <section class="errMsgContainer">
+      <div class="errMsg">
+        <h4>Incorrect username or password.</h4>
+      </div>
+    </section>
+
+
+  <!-- ************************************* -->
   <form ng-submit="auth.login(userInfo)">
     <div>
       <input type="text" ng-model="userInfo.username" placeholder="username">
@@ -9,6 +18,8 @@
     </div>
     <button type="submit">Login</button>
   </form>
+  <br>
+  <p id="notUser" ui-sref="signup">Not A User?</p>
   <br>
   <div class="loginMemes" ng-repeat="meme in rand.shuffledMemesData | limitTo: 2">
     <img ng-src="{{meme.url}}" alt="{{meme.name}}">

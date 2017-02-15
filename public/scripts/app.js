@@ -19,7 +19,6 @@ function HomeController($scope, $http){
     self.currentUser = null;
   })
 
-  // $broadcast('currentUser', self.currentUser);
 }
 
 function AuthController($http, $state, $scope, $rootScope){
@@ -38,9 +37,15 @@ function AuthController($http, $state, $scope, $rootScope){
   function login(userInfo) {
     $http.post('/sessions/login', userInfo)
       .then(function(response) {
-        $scope.$emit('userLoggedIn', response.data.data);
-        $rootScope.$emit('fetchData', response.data.data);
-        $state.go('user', {userId: response.data.data._id});
+        if(response.data.data == "unauthorized"){
+          showErrMsg(false);
+          $state.go('login');
+        }else{
+          showErrMsg(true);
+          $scope.$emit('userLoggedIn', response.data.data);
+          $rootScope.$emit('fetchData', response.data.data);
+          $state.go('user', {userId: response.data.data._id});
+        }
       });
   }
 
@@ -52,6 +57,16 @@ function AuthController($http, $state, $scope, $rootScope){
       });
   }
 
+  function showErrMsg(valid){
+    if(!valid){
+      $(".errMsgContainer").css("display", "block");
+    } else{
+      $(".errMsgContainer").css("display", "none");
+    }
+
+  }
+
+  self.showErrMsg = showErrMsg;
   self.logout = logout;
   self.signup = signup;
   self.login = login;
@@ -62,6 +77,10 @@ function MemeController($http, $state, $scope, $stateParams){
 
   getBlankMemes();
   getSavedMemes($stateParams.userId);
+
+  $scope.$on('getSavedMemes', function(event, userId) {
+    getSavedMemes(userId);
+  })
 
  function showCreate(currentUser){
    $state.go('createMeme');
@@ -80,15 +99,11 @@ function MemeController($http, $state, $scope, $stateParams){
       self.savedMemes = [];
       self.favoriteMemesArray = [];
       self.savedMemes = response.data.currentUser.memeList;
-      console.log(self.savedMemes.length);
-      console.log(self.savedMemes);
 
       for (var i = 0; i < self.savedMemes.length; i++) {
         if (self.savedMemes[i].favorite === true) {
           // self.favoriteMemesArray[i] = self.savedMemes[i];
           self.favoriteMemesArray.push(self.savedMemes[i]);
-          console.log(self.savedMemes[i].favorite);
-          console.log(self.favoriteMemesArray);
         }
       }
     })
@@ -130,10 +145,6 @@ function MemeController($http, $state, $scope, $stateParams){
  }
 
  function favoriteMeme(currentUser, meme){
-   console.log('favoriteMeme');
-   console.log(currentUser);
-   console.log(meme);
-
    var isFav = null;
    if (meme.favorite === false) {
      isFav = true;
@@ -151,8 +162,6 @@ function MemeController($http, $state, $scope, $stateParams){
 
    $http.put(`/user/${currentUser}/meme/${meme._id}`, favMeme)
    .then(function(response) {
-     console.log('response');
-     console.log(response);
      self.favoriteMemesArray = [];
      getSavedMemes(currentUser);
    });
@@ -160,7 +169,6 @@ function MemeController($http, $state, $scope, $stateParams){
 
   function showEditModal (meme){
     $(".editMemeModal").css("display", "block");
-    console.log(meme);
 
     self.editMemeValue = meme;
   }
@@ -188,6 +196,8 @@ function MemeController($http, $state, $scope, $stateParams){
    getSavedMemes(currentUser);
   })
  }
+
+
  self.closeEditModal = closeEditModal;
  self.showEditModal= showEditModal;
  self.favoriteMeme = favoriteMeme;
@@ -201,13 +211,13 @@ function MemeController($http, $state, $scope, $stateParams){
  self.getSavedMemes = getSavedMemes;
 }
 
-function RandomMemeController($http, $state) {
+function RandomMemeController($http, $state, $scope) {
 
   var self = this;
 
   self.shuffledMemesData =[];
+  shuffle();
 
-    // USE THIS TO SHUFFLE YOUR ARRAYS
     //Credits: code adapted from memory game lab WDIR General Assembly
      function shuffle() {
        $http.get('/memes')
@@ -220,7 +230,27 @@ function RandomMemeController($http, $state) {
         self.shuffledMemesData = response.data.randomMemes;
        })
     }
-    shuffle();
 
+
+    function saveFeedMeme(meme, userId) {
+
+      if(userId !== null){
+        self.newMeme = {
+         name: meme.name,
+         category: meme.category,
+         url: meme.url,
+         userId: userId
+        }
+
+        $http.put(`/user/${userId}/meme`, self.newMeme )
+        .then(function(response) {
+          $scope.$emit('getSavedMemes', userId);
+          $state.go('user', {reload: true});
+        });
+      }
+
+    }
+
+  self.saveFeedMeme = saveFeedMeme;
   self.shuffle = shuffle;
 }

@@ -4,8 +4,7 @@
   "description": "## App Title: TBD",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "postinstall": "node db/seeds.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "mongoose": "^4.8.1",
     "mongoose-seed": "^0.3.1",
     "morgan": "^1.8.0",
+    "ngstorage": "^0.3.11",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },

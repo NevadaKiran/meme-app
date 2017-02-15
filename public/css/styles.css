@@ -130,6 +130,18 @@ button {
   padding: 1em;
 }
 
+#notUser {
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+  margin: auto;
+  width: 95px;
+}
+
+#notUser:hover {
+  color: #1FDA9A;
+}
+
 /*User Partial*/
 header {
   text-align: center;
@@ -260,6 +272,24 @@ header {
   text-align: center;
   margin: auto;
 }
+
+/**************** err msg ******************/
+.errMsgContainer {
+  display: none;
+}
+
+.errMsg {
+  background-color: #FFAD34;
+  width: 300px;
+  margin: auto;
+}
+
+.errMsg > h4 {
+  color: white;
+  padding: 10px;
+}
+
+/*******************************************/
 /***************  modal *********************/
 /*credit: code by ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp*/
 .editMemeModal {
