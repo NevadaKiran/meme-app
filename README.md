@@ -222,10 +222,16 @@ request-promise
 - Display top 10 user favorite memes on user show page
 - Add a user option to choose a display layout for top 10 memes
 
-## Project Challenges
+## Project Challenges and Unresolved Issues
 1) Our first challenge came from the save/post route when implementing the meme create component of the app. We were successful in saving created memes into the appropriate user object on our backend server, however when we had difficulty displaying those saved memes on the front-end. Once the redirect completed, the meme was saved in the object but failed to render unless we logged out and in of the user that created the meme.
 
-W
+We considered multiple causes for this issue, which included checking for a race condition and the API get requests. In the end, our issue came from our back-end get request. We were calling the User by id, yet we weren't properly calling the user in the object. Once we fixed this, we were able to successfully add a created meme to the user save list immediately.
 
+2) The second issue we've encountered is coming from the authentication portion of our app. When you refresh the browser on the user page, the session is lost since we are using Angular. Yet, you are able to still manipulate the user page as normal which includes editing, favoriting, and deleting memes from the last user. Additionally, a user was able to login to a user page that wasn't theirs if they entered their login credentials correctly.
 
-that we encountered came from the authentication portion of our
+We were able to add a block on the user page that prevents the user from logging into any other user page that isn't their own. The issue with refreshing the browser still exists, but fortunately we have found two potential solutions in the form of Angular services and ng-store. We ran out of time before we could implement either of these solutions, and plan to revist our app to fix this issue sometime in the future.
+
+3) We were hoping to fulfill another reach goal which would allow users to share the memes they create. We know how to access the url from each meme in our user object, and we were hoping for more time to actually implement this into the app. This will be another reach goal we return to once time permits.
+
+## Conclusion
+Overall, we are happy with how All The Memes evolved and was executed. As a team, we were able to collaborate effectively to accomplish not only our individual tasks but also peer program as often as we could. This resulted in the app we have completed today. Moving forward, we are discussing plans to revisit our reach goals, fix our current bugs, and improve overall UX design.
