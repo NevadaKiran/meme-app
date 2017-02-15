@@ -30,7 +30,7 @@ var memeData = [
       url:"http://bit.ly/2lHg4Ge"
       },
       {
-      name:"histoso",
+      name:"No Entrenido",
       category:"Spanish, Grumpy Cat",
       url:"http://bit.ly/2lcgGqb"
       },
@@ -180,7 +180,7 @@ var memeData = [
         url:"http://bit.ly/2lbYxJd"
       },
       {
-        name:"Intern fail",
+        name:"Intern Fail",
         category:"Star Wars, Fail, Coffee, Sith Lord",
         url:"http://bit.ly/2lItK4I"
       },
