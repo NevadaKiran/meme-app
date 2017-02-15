@@ -2,6 +2,8 @@
   <h1>{{home.currentUser.username}}'s Memes</h1>
   <h3 ng-click="meme.showCreate(home.currentUser)">Create A Meme!</h3>
 </header>
+<br>
+<br>
 
 <!-- *************** modal  *********************** -->
 <!-- setup credit to ww3 schools @ http://www.w3schools.com/howto/howto_css_modals.asp -->
@@ -41,7 +43,7 @@
 
   <section class="middleUserPage">
     <h2 class="userTitles">Saved Memes</h2>
-    <div class="savedMemes" ng-repeat="memes in meme.savedMemes">
+    <div class="savedMemes" ng-repeat="memes in meme.savedMemes | orderBy: '-' ">
       <h4 class="userTitles">{{memes.name}}</h4>
       <img class="userMemeImages" ng-src="{{memes.url}}" alt="{{memes.name}}">
       <div class="userMemeLists">
