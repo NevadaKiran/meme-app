@@ -233,18 +233,21 @@ function RandomMemeController($http, $state, $scope) {
 
 
     function saveFeedMeme(meme, userId) {
-      self.newMeme = {
-       name: meme.name,
-       category: meme.category,
-       url: meme.url,
-       userId: userId
-      }
 
-      $http.put(`/user/${userId}/meme`, self.newMeme )
-      .then(function(response) {
-        $scope.$emit('getSavedMemes', userId);
-        $state.go('user', {reload: true});
-      });
+      if(userId !== null){
+        self.newMeme = {
+         name: meme.name,
+         category: meme.category,
+         url: meme.url,
+         userId: userId
+        }
+
+        $http.put(`/user/${userId}/meme`, self.newMeme )
+        .then(function(response) {
+          $scope.$emit('getSavedMemes', userId);
+          $state.go('user', {reload: true});
+        });
+      }
 
     }
 
