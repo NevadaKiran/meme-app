@@ -45,12 +45,8 @@ router.post('/api', function(req, res) {
 });
 
 router.put('/:id', function(req, res) {
-  console.log('hit backend put route');
-  console.log(req.body);
   User.findById(req.session.currentUser._id).exec()
     .then(function(user) {
-      console.log('Checking Meme List Id');
-      console.log(user.memeList.id)
       var meme = user.memeList.id(req.params.id);
 
       meme.name = req.body.name;
@@ -58,9 +54,28 @@ router.put('/:id', function(req, res) {
       meme.favorite = req.body.favorite;
 
       user.save();
-      console.log(user);
-      console.log(user.memeList.id(req.params.id));
+
       res.json({ meme: user.memeList.id(req.params.id) });
+    })
+    .catch(function(err) {
+      res.json(err)
+    })
+});
+
+router.put('/', function(req, res) {
+  User.findById(req.session.currentUser._id).exec()
+    .then(function(user) {
+
+      var newMeme = new Meme({
+        name: req.body.name,
+        category: req.body.category,
+        url: req.body.url
+      });
+
+      user.memeList.push(newMeme);
+
+      user.save();
+      res.json({status: 204, message: 'meme saved'});
     })
     .catch(function(err) {
       res.json(err)
