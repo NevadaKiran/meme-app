@@ -56,13 +56,13 @@
   <section class="rightUserPage" ng-controller="RandomMemeController as rand">
     <h2 class="userTitles">Meme Feed</h2>
     <div class="userMemeFeed" ng-repeat="meme in rand.shuffledMemesData | limitTo: 10">
-      <h4 class="userTitles">{{meme.name}}</h4>
+      <h4 class="memeTitles">{{meme.name}}</h4>
       <img class="userMemeImages" ng-src="{{meme.url}}" alt="{{meme.name}}">
       <div class="userMemeLists">
         <i class="fa fa-heart memeFeedIcons iconSave"> Save</i>
         <i class="fa fa-star memeFeedIcons iconFavorite"> Favorite</i>
       </div>
-      <h6 class="userTitles">Category: {{meme.category}}</h6>
+      <h6 class="memeTitles">Category: {{meme.category}}</h6>
     </div>
   </section>
 </section>

@@ -1,9 +1,9 @@
 <section class="createMemeContainer">
-  <h2>Select a meme background</h3>
 
   <div class="searchBarCreateMeme">
-    <form >
-      <input type="text" ng-model="searchValue" placeholder="Search for meme">
+    <h2>Select A Meme Background</h3>
+    <form>
+      <input id="createSearch" type="text" ng-model="searchValue" placeholder="Search for a Background">
     </form>
   </div>
 
@@ -29,9 +29,10 @@
     </div>
   </div>
 <!-- *********************************************** -->
-  <section class="blankMemeContainer" >
+  <section class="blankMemeContainer">
 
-    <div  ng-click="meme.showCreateMemeModal(blank)" class="blankMemes" ng-repeat="blank in meme.blankMemes | filter: searchValue">
+    <div ng-click="meme.showCreateMemeModal(blank)" class="blankMemes" ng-repeat="blank in meme.blankMemes | filter: searchValue">
+      <h4 class="memeTitles">{{blank.name}}</h4>
       <img ng-src="{{blank.url}}" alt="{{blank.name}}">
     </div>
 
