@@ -78,6 +78,10 @@ function MemeController($http, $state, $scope, $stateParams){
   getBlankMemes();
   getSavedMemes($stateParams.userId);
 
+  $scope.$on('getSavedMemes', function(event, userId) {
+    getSavedMemes(userId);
+  })
+
  function showCreate(currentUser){
    $state.go('createMeme');
  }
@@ -90,7 +94,6 @@ function MemeController($http, $state, $scope, $stateParams){
  }
 
  function getSavedMemes(currentUser){
-   console.log(currentUser);
   $http.get(`/user/${currentUser}/meme`)
     .then(function(response){
       self.savedMemes = [];
@@ -142,10 +145,6 @@ function MemeController($http, $state, $scope, $stateParams){
  }
 
  function favoriteMeme(currentUser, meme){
-   console.log('favoriteMeme');
-   console.log(currentUser);
-   console.log(meme);
-
    var isFav = null;
    if (meme.favorite === false) {
      isFav = true;
@@ -163,8 +162,6 @@ function MemeController($http, $state, $scope, $stateParams){
 
    $http.put(`/user/${currentUser}/meme/${meme._id}`, favMeme)
    .then(function(response) {
-     console.log('response');
-     console.log(response);
      self.favoriteMemesArray = [];
      getSavedMemes(currentUser);
    });
@@ -172,7 +169,6 @@ function MemeController($http, $state, $scope, $stateParams){
 
   function showEditModal (meme){
     $(".editMemeModal").css("display", "block");
-    console.log(meme);
 
     self.editMemeValue = meme;
   }
@@ -200,6 +196,8 @@ function MemeController($http, $state, $scope, $stateParams){
    getSavedMemes(currentUser);
   })
  }
+
+
  self.closeEditModal = closeEditModal;
  self.showEditModal= showEditModal;
  self.favoriteMeme = favoriteMeme;
@@ -213,13 +211,13 @@ function MemeController($http, $state, $scope, $stateParams){
  self.getSavedMemes = getSavedMemes;
 }
 
-function RandomMemeController($http, $state) {
+function RandomMemeController($http, $state, $scope) {
 
   var self = this;
 
   self.shuffledMemesData =[];
+  shuffle();
 
-    // USE THIS TO SHUFFLE YOUR ARRAYS
     //Credits: code adapted from memory game lab WDIR General Assembly
      function shuffle() {
        $http.get('/memes')
@@ -232,7 +230,24 @@ function RandomMemeController($http, $state) {
         self.shuffledMemesData = response.data.randomMemes;
        })
     }
-    shuffle();
 
+
+    function saveFeedMeme(meme, userId) {
+      self.newMeme = {
+       name: meme.name,
+       category: meme.category,
+       url: meme.url,
+       userId: userId
+      }
+
+      $http.put(`/user/${userId}/meme`, self.newMeme )
+      .then(function(response) {
+        $scope.$emit('getSavedMemes', userId);
+        $state.go('user', {reload: true});
+      });
+
+    }
+
+  self.saveFeedMeme = saveFeedMeme;
   self.shuffle = shuffle;
 }
